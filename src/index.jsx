@@ -6,16 +6,21 @@ import Home from './Home.jsx'
 import About from './About.jsx'
 
 function App(){ 
-  <BrowserRouter> 
-    <nav> 
-      <Link to="/">VanLife</Link>
-      <Link to="/about">About</Link>
-    </nav>
-    <Routes> 
-      <Route path="/" element={<Home />}/>
-      <Route path="/about" element={<About />}/>
-    </Routes>
-  </BrowserRouter>
+
+  return (
+    <BrowserRouter> 
+      <nav> 
+        <Link to="/">VanLife</Link>
+        <Link to="/about">About</Link>
+      </nav>
+      <Routes> 
+        <Route path="/" element={<Home />}/>
+        <Route path="/about" element={<About />}/>
+      </Routes>
+    </BrowserRouter>
+  )
 }
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);
