@@ -1,10 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './styles.css'
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import './index.css'
+import Home from './Home.jsx'
+import About from './About.jsx'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+function App(){ 
+  <BrowserRouter> 
+    <nav> 
+      <Link to="/">VanLife</Link>
+      <Link to="/about">About</Link>
+    </nav>
+    <Routes> 
+      <Route path="/" element={<Home />}/>
+      <Route path="/about" element={<About />}/>
+    </Routes>
+  </BrowserRouter>
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
