@@ -20,17 +20,20 @@ export default function Vans(){
             .then(data => setArt(data.data))
     }, [page]) 
 
+    console.log(art)
 
     const mappedArt = art.map(data => data.image_id && ( 
-        <div key={data.id} className='van-tile'>
-            <img src={`https://www.artic.edu/iiif/2/${data.image_id}/full/843,/0/default.jpg`} /> 
-            <div className='van-info'>
-                <h3>{data.title}</h3> 
-                { data.place_of_origin && <h5>Origin: {data.place_of_origin}</h5> }
-                { data.artist_title && <p>By: {data.artist_title}</p> }
-                { data.artist_title === null  && <p>Artist unknown</p> }
-            </div> 
-        </div>
+        <Link to={`/vans/${data.id}`}>
+            <div key={data.id} className='van-tile'>
+                    <img src={`https://www.artic.edu/iiif/2/${data.image_id}/full/843,/0/default.jpg`} /> 
+                    <div className='van-info'>
+                        <h3>{data.title}</h3> 
+                        { data.place_of_origin && <h5>Origin: {data.place_of_origin}</h5> }
+                        { data.artist_title && <p>By: {data.artist_title}</p> }
+                        { data.artist_title === null  && <p>Artist unknown</p> }
+                    </div> 
+            </div>
+        </Link>
     )) 
 
 

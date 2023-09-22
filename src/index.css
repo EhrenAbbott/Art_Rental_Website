@@ -42,7 +42,6 @@ a {
 
 a:hover {
   color: #161616;
-  text-decoration: underline;
 }
 
 .link-button {
@@ -162,6 +161,7 @@ a:hover {
   text-decoration: none;    
 }
 
+
 .van-tile img {
   max-width: 100%;
   border-radius: 5px;
@@ -183,6 +183,8 @@ a:hover {
   color: #4D4D4D;
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
 
 .van-type:hover {
   color: #FFEAD0;

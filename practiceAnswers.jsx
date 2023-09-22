@@ -35,3 +35,52 @@
 // yarn add react-router-dom
 
 //##########################################################################
+
+// 2.  
+//--------------------Vans.jsx------------------------------------
+
+// import React from "react"
+// import { Link } from "react-router-dom"
+
+// export default function Vans() {
+//     const [vans, setVans] = React.useState([])
+
+//     const vanElements = vans.map(van => (
+//         <div>
+//             <Link to={`/vans/${van.id}`}>
+//                 <div className="van-info">
+//                     <h3>text</h3>
+//                 </div>
+//             </Link>
+//         </div>
+//     ))
+
+//     return (
+//         <div>
+//             {vanElements}
+//         </div>
+//     )
+// }
+
+//--------------------Index.jsx------------------------------------
+
+// import React from 'react';
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+// import Vans from "./pages/Vans"
+// import VanDetail from "./pages/VanDetail"
+
+// function App() {
+//   return (
+//     <BrowserRouter>
+//         <Link to="/vans">Vans</Link>
+//       <Routes>
+//         <Route path="/vans" element={<Vans />} />
+//         <Route path="/vans/:id" element={<VanDetail />} />
+//       </Routes>
+//     </BrowserRouter>
+//   )
+// }
+
+// ReactDOM
+//   .createRoot(document.getElementById('root'))
+//   .render(<App />);

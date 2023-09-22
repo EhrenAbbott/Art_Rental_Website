@@ -5,6 +5,7 @@ import './index.css'
 import Home from './Home.jsx'
 import About from './About.jsx'
 import Vans from './Vans.jsx'
+import VanDetail from './VanDetail.jsx'
 
 
 
@@ -22,6 +23,7 @@ function App(){
         <Route path="/" element={<Home />}/>
         <Route path="/about" element={<About />}/>
         <Route path='/vans' element={<Vans />} />
+        <Route path='/vans/:id' element={<VanDetail/> }/>
       </Routes>
     </BrowserRouter>
   )

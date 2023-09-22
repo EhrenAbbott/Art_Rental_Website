@@ -9,5 +9,9 @@
 
 //##########################################################################
 
+// 2. Create a route paramter so that the path of /vans can take /{id} after it. 
+//    When clicking on a mapped div created from an obj, have it send the user to 
+//    a page called whose url is /vans/{unique-id-of-van} 
+//    This page will display a component from VanDetail.jsx
 
 //##########################################################################
