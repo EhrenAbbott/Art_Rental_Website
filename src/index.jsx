@@ -5,6 +5,8 @@ import './index.css'
 import Home from './Home.jsx'
 import About from './About.jsx'
 
+import './server'
+
 function App(){ 
 
   return (
