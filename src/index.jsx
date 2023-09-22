@@ -6,12 +6,15 @@ import Home from './Home.jsx'
 import About from './About.jsx'
 import Vans from './Vans.jsx'
 
+
+
+
 function App(){ 
 
   return (
     <BrowserRouter> 
       <nav> 
-        <Link to="/">VanLife</Link>
+        <Link className='site-logo' to="/">VanLife</Link>
         <Link to="/about">About</Link>
         <Link to="/vans">Vans</Link>
       </nav>
