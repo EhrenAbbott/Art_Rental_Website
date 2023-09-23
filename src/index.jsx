@@ -15,9 +15,9 @@ function App(){
   return (
     <BrowserRouter> 
       <nav> 
-        <Link className='site-logo' to="/">VanLife</Link>
+        <Link className='site-logo' to="/">Rent the Gallery</Link>
         <Link to="/about">About</Link>
-        <Link to="/vans">Vans</Link>
+        <Link to="/vans">Artwork</Link>
       </nav>
       <Routes> 
         <Route path="/" element={<Home />}/>
