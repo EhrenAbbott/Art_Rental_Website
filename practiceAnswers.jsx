@@ -147,7 +147,52 @@
 
 //##########################################################################
 
-// 6.
+// 6. 
+//--------------------Header.jsx------------------------------------
+
+// import React from "react";
+// import { Outlet } from "react-router-dom";
+
+// export default function Header(){ 
+
+//     return( 
+//         <div>
+//             <nav> 
+//                 <h1>text</h1>
+//             </nav> 
+//             <Outlet />
+//         </div>
+//     )
+
+//--------------------index.jsx------------------------------------
+
+// import React from 'react'
+// import ReactDOM from 'react-dom/client'
+// import {BrowserRouter, Routes, Route} from 'react-router-dom'
+// import Home from './Home.jsx'
+// import About from './About.jsx'
+// import Header from './Header'
+
+// function App(){ 
+
+//   return (
+//     <BrowserRouter> 
+//       <Routes>
+//         <Route element={<Header />}> 
+//           <Route path="/" element={<Home />}/>
+//           <Route path="/about" element={<About />}/>
+//         </Route>
+//       </Routes>
+//     </BrowserRouter>
+//   )
+// }
+
+// ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+//NOTE: notice that Outlet has to be used as a sort of placeholder for the
+// other components that Header will get wrapped around. 
+// And in App an additonal Route element is wrapped around the other routes, except 
+// this one is NOT self-closing
 
 //##########################################################################
 

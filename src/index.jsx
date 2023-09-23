@@ -6,6 +6,8 @@ import Home from './Home.jsx'
 import About from './About.jsx'
 import Vans from './Vans.jsx'
 import VanDetail from './VanDetail.jsx'
+import Header from '../components/Header'
+import Layout from '../components/Layout'
 
 
 
@@ -14,16 +16,13 @@ function App(){
 
   return (
     <BrowserRouter> 
-      <nav> 
-        <Link className='site-logo' to="/">Rent the Gallery</Link>
-        <Link to="/about">About</Link>
-        <Link to="/vans">Artwork</Link>
-      </nav>
-      <Routes> 
-        <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
-        <Route path='/vans' element={<Vans />} />
-        <Route path='/vans/:id' element={<VanDetail/> }/>
+      <Routes>
+        <Route element={<Header />}> 
+          <Route path="/" element={<Home />}/>
+          <Route path="/about" element={<About />}/>
+          <Route path='/vans' element={<Vans />} />
+          <Route path='/vans/:id' element={<VanDetail/> }/>
+        </Route>
       </Routes>
     </BrowserRouter>
   )

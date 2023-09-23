@@ -30,7 +30,9 @@
 
 //##########################################################################
 
-// 6.
+// 6. Create a navbar component  called Header in its own file. 
+//    Created a nested route in App() so that the navbar component wraps around
+//    all other components of the page. 
 
 //##########################################################################
 
