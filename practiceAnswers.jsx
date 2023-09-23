@@ -84,3 +84,85 @@
 // ReactDOM
 //   .createRoot(document.getElementById('root'))
 //   .render(<App />);
+
+//##########################################################################
+
+// 3. 
+// import React from "react"
+// import { useParams } from "react-router-dom"
+
+// export default function VanDetail() {
+//     const params = useParams()
+//     console.log(params)
+   
+//     return <h1>text</h1>
+// }
+
+//##########################################################################
+
+// 4. 
+
+// import React from 'react'
+// import { useParams } from "react-router-dom"
+
+// export default function VanDetail() { 
+
+//     const params = useParams()
+
+//     React.useEffect(() => { 
+//         fetch(`https://api.artic.edu/api/v1/artworks/${params.id}`)
+//             .then(res => res.json())
+//             .then(data => console.log(data.data))
+//     }, [params.id])
+
+//     return( 
+//         <h1>text</h1>
+//     )
+// }
+
+//NOTE: remember that how you use the API url will vary from api to api; in this case
+//    the params vairable represents the ID for a specific piece of art, so that gets 
+//    plugged into the url at a spot determined by the api to retrieve all of the data for 
+//    ONLY that particular piece of art. Also remember that hoe you navigate throguht that json object
+//    to get the right value will depend on how that api organizes/nests its info. 
+//##########################################################################
+
+// 5.
+// import React from "react"
+
+// export default function VanDetail() {
+    
+//     const [van, setVan] = React.useState(null)
+
+//     return (
+//         <div>
+//             {van ? (
+//                 <div>
+//                     <h2>{van.name}</h2>
+//                 </div>
+//             ) : <h2>Loading...</h2>}
+//         </div>
+//     )
+// }
+
+//##########################################################################
+
+// 6.
+
+//##########################################################################
+
+// 7.
+
+//##########################################################################
+
+// 8.
+
+//##########################################################################
+
+// 9.
+
+//##########################################################################
+
+// 10.
+
+//##########################################################################

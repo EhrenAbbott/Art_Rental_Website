@@ -9,9 +9,43 @@
 
 //##########################################################################
 
-// 2. Create a route paramter so that the path of /vans can take /{id} after it. 
+// 2. Create a route parametr so that the path of /vans can take /{id} after it. 
 //    When clicking on a mapped div created from an obj, have it send the user to 
 //    a page called whose url is /vans/{unique-id-of-van} 
 //    This page will display a component from VanDetail.jsx
+
+//##########################################################################
+
+// 3. Print the params of a route to the console
+
+//##########################################################################
+
+// 4. Building off of  #3, have this component fetch data from an api that is 
+//    specific to the useParams() value being used.
+
+//##########################################################################
+
+// 5. Conditionally render a div depending on if there is anything saved as the state object; 
+//    If so, dynamically render parts of that object; if not, display "loading"
+
+//##########################################################################
+
+// 6.
+
+//##########################################################################
+
+// 7.
+
+//##########################################################################
+
+// 8.
+
+//##########################################################################
+
+// 9.
+
+//##########################################################################
+
+// 10.
 
 //##########################################################################
