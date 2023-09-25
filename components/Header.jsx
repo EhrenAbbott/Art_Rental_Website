@@ -6,7 +6,7 @@ export default function Header(){
         <div>
             <nav> 
                 <Link className='site-logo' to="/">Rent the Gallery</Link>
-                <Link to="/host">Host</Link>
+                <Link to="/dashboard">Artist Portal</Link>
                 <Link to="/about">About</Link>
                 <Link to="/vans">Artwork</Link>
             </nav> 
