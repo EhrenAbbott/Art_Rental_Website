@@ -196,7 +196,52 @@
 
 //##########################################################################
 
-// 7.
+// 7. 
+
+//--------------------index.jsx------------------------------------
+
+// import React from 'react'
+// import ReactDOM from 'react-dom'
+// import { BrowserRouter, Routes, Route} from 'react-router-dom'
+// import Host from './Host.jsx'
+// import Income from './Income.jsx'
+// import Reviews from './Reviews.jsx'
+
+// function App(){ 
+//     <BrowserRouter> 
+//         <Routes> 
+//             <Route path="/host" element={<Host />}> 
+//                 <Route path="/host/income" element={<Income />} />
+//                 <Route path="/host/reviews" element={<Reviews />} />
+//             </Route>
+//         </Routes>
+//     </BrowserRouter>
+// }
+
+//--------------------Host.jsx------------------------------------
+
+// import React from "react"
+// import {Outlet} from "react-router-dom"
+
+// export default function Dashboard() {
+//     return (
+//         <>
+//             <h1>Dashboard goes here</h1>
+//             <Outlet />
+//         </>
+//     )
+// }
+
+// NOTE: notice that the big difference between #6 and this problem is that there is 
+//  NO path prop for the previous quesition; this means that component gets wrapped around 
+// the encomposed pages visaully, BUT it does not actually create a navigable route that can be
+// entered as a URL. However, bc in this problem the wrapped Route has an element and a path,
+// it both creates a URL path that can be used AND it makes the component appear as visual elements 
+// of its child component
+// ALSO: notice that regardless of if path and element are both being passed in as props, 
+// you still need to use <Outlet /> in the parent component/route.
+
+
 
 //##########################################################################
 

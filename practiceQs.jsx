@@ -36,7 +36,8 @@
 
 //##########################################################################
 
-// 7.
+// 7. Create a nested route so that the URLs /host/income and /host/reviews
+//    work when typed into the nav bar. 
 
 //##########################################################################
 
