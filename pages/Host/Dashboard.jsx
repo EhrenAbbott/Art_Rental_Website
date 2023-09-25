@@ -5,7 +5,7 @@ export default function Dashbaord(){
 
     return( 
         <>  
-            <h1>Dasboard component</h1>
+            <h1>Dashboard component</h1>
         </>
     )   
 }
