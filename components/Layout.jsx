@@ -6,9 +6,11 @@ import Footer from "./Footer";
 export default function Layout(){ 
 
     return( 
-        <div> 
-            <Header /> 
-            <Outlet />
+        <div className="site-wrapper"> 
+            <Header />  
+            <main>
+                <Outlet />
+            </main>
             <Footer />
         </div>
     )

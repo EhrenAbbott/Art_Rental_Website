@@ -293,6 +293,12 @@ i[class*='van-type-'] {
   padding: 5px;
 }
 
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 /* FOOTER */
 footer {
   background-color: #161616;

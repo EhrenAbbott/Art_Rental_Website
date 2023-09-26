@@ -52,10 +52,12 @@ import { BrowserRouter, Routes } from "react-router-dom";
 
 //##########################################################################
 
-// 9.
+// 9. Make a link whose styling gets changed when the page that it navigates to is open. 
+//    So, for example,  clicking the "About" link would bring you to that page, and only while you 
+//    are on that page, the link would appear in bold. 
 
 //##########################################################################
 
-// 10.
+// 10. Do #9 except use the style prop instead of the className prop.
 
 //##########################################################################

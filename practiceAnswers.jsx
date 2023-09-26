@@ -1,5 +1,7 @@
 //##########################################################################
 
+import { NavLink } from "react-router-dom";
+
 // 1.  ***NOT BEST PRACTICE!***
 //--------------------index.jsx------------------------------------
 
@@ -268,10 +270,41 @@
 
 //##########################################################################
 
-// 9.
+// 9.  
+{/* <NavLink 
+    to="/about"
+    className={({isActive}) => isActive ? "link-class" : null }
+> 
+    About
+</NavLink> */}
+
+//EXPLANATION: NavLink allows us to pass a function. Whatever that function returns 
+// will become its class.
+// React Router will automtically pass this function an object that has a property called
+// "isActive". That happens behind the scenes without explicity doing anything. 
+// In the function we are destructuring the isActive Boolean property, which is possible bc
+// it is part of an object. 
+// The brackets are the syntax that allow su to destructure. (Otherwise we would have 
+// to do somehting like OBJ.isActive).
+//. So, we are saying if the isActive property is true, then the class will become "link-class"; 
+// otherwise don't do anything to the class. 
+
 
 //##########################################################################
 
-// 10.
+// 10. 
+
+// const linkClass = { 
+//     fontWeight: "bold"
+// }
+
+// return (
+//     <NavLink 
+//         to="/about"
+//         style={({isActive}) => isActive ? linkClass : null }
+//     > 
+//         About
+//     </NavLink>
+// )
 
 //##########################################################################
