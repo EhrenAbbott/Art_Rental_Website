@@ -48,7 +48,7 @@ export default function Vans(){
                 {mappedArt}
             </div> 
             <div className='page-btn-div'>
-                <button className='page-btn' onClick={loadFewer}>Prev page</button>
+                { page > 1 && <button className='page-btn' onClick={loadFewer}>Prev page</button>}
                 <button className='page-btn' onClick={loadMore}>Next page</button>
             </div>
         </div>
