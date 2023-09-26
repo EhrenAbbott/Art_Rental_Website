@@ -196,7 +196,10 @@
 
 //##########################################################################
 
-// 7. 
+// 7.  !!!Not best practice!!! 
+//  ^In reality, if you just use path='income', React will know to inherit the 
+// path from its parent, so in /host/income, the /host/ part is implied/assumed if 
+// you don't explicity state it that way. This way of doing it can/is done for most routes. 
 
 //--------------------index.jsx------------------------------------
 
@@ -246,6 +249,22 @@
 //##########################################################################
 
 // 8.
+// !!!: the below takes place within the App function on the index.jsx file as it does above, 
+// this is just a consolidated depication to avoid repitition. 
+
+    // <Route path="dashbaord" element={<HostLayout />}>
+    //     <Route index element={<Dashboard />} />
+    //     <Route path="income" element={<Income />} />
+    // </Route>
+
+// NOTE: Remember that in the HostLayout component there has to the <Outlet /> tag. 
+// ALSO: as it is above, /dasboard would lead to the Dashboard component; so the index keyword 
+// essentially makes it so that that child gets the path from the parent component AND the parent
+// component still displays it contents with each child.
+// NOTICE: /dashboard/income would lead to the Income component (w/ the parent still 
+// being displayed). As it is above, there is NO URl endpoint that woudl lead to JUST the HostLayout
+// by itself with nothing else; this is intentional, bc we woudl not want its secondary navbar 
+// to get displayed with no other content. 
 
 //##########################################################################
 

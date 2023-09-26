@@ -12,6 +12,10 @@ export default function Vans(){
         setPage(prevPage => prevPage + 1)
     }
 
+    function loadFewer(){ 
+        setPage(prevPage => prevPage - 1)
+    }
+
     
 
     React.useEffect(() => { 
@@ -42,8 +46,11 @@ export default function Vans(){
         <div className='van-list-container'>  
             <div  className='van-list'>
                 {mappedArt}
+            </div> 
+            <div className='page-btn-div'>
+                <button className='page-btn' onClick={loadFewer}>Prev page</button>
+                <button className='page-btn' onClick={loadMore}>Next page</button>
             </div>
-            <button onClick={loadMore}>See more</button>
         </div>
     )
 }

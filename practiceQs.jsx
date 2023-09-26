@@ -1,5 +1,7 @@
 //##########################################################################
 
+import { BrowserRouter, Routes } from "react-router-dom";
+
 // 1. Import/set up Browser Router, Routes, and Route. 
 //    Have .createRoot render  a component called App. 
 //    In the App component, use the imports from above to 
@@ -41,7 +43,12 @@
 
 //##########################################################################
 
-// 8.
+// 8. Wrap a a layout component as a route around two other routes. Set its path. 
+//    Have the first nested route receive the path from the parent component. 
+//    Have the second route (sibling to the first) get a route that gets added on to
+//    the first as a rested route. 
+
+
 
 //##########################################################################
 

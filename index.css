@@ -280,3 +280,17 @@ i[class*='van-type-'] {
   font-size: 1.125rem;
   max-width: 50%;
 }
+
+
+
+.page-btn-div { 
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 35px;
+}
+
+.page-btn-div button { 
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 5px;
+}
