@@ -11,6 +11,9 @@ import Income from "/pages/Host/Income.jsx"
 import Reviews from "/pages/Host/Reviews.jsx"
 import Dashboard from "/pages/Host/Dashboard.jsx"
 import HostLayout from '../components/HostLayout.jsx'
+import YourArtwork from './Host/YourArtwork.jsx'
+import YourArtDetail from './Host/YourArtDetail.jsx'
+
 
 
 
@@ -29,6 +32,8 @@ function App(){
             <Route index element={<Dashboard />} />
             <Route path='income' element={<Income />}/>
             <Route path='reviews' element={<Reviews />}/>
+            <Route path="yourartwork" element={<YourArtwork />}/>
+            <Route path="yourartwork/:id" element={<YourArtDetail />}/>
           </Route>
         </Route>
       </Routes>
