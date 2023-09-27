@@ -12,9 +12,27 @@ export default function Header(){
         <div>
             <nav> 
                 <Link className='site-logo' to="/">Rent the Gallery</Link>
-                <NavLink to="/dashboard" style={({isActive}) => isActive ? linkStyle : null}>Artist Portal</NavLink>
-                <NavLink to="/about" style={({isActive}) => isActive ? linkStyle : null}>About</NavLink>
-                <NavLink to="/vans" style={({isActive}) => isActive ? linkStyle : null}>Artwork</NavLink>
+                
+                <NavLink 
+                    to="/dashboard" 
+                    style={({isActive}) => isActive ? linkStyle : null}
+                >
+                    Artist Portal
+                </NavLink>
+
+                <NavLink 
+                    to="/about" 
+                    style={({isActive}) => isActive ? linkStyle : null}
+                >
+                    About
+                </NavLink>
+
+                <NavLink 
+                    to="/vans" 
+                    style={({isActive}) => isActive ? linkStyle : null}
+                >
+                    Artwork
+                </NavLink>
 
             </nav> 
         </div>
