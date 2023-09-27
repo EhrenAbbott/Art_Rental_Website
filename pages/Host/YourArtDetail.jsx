@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink, Link } from "react-router-dom";
 
 export default function YourArtDetail(){ 
 
@@ -17,11 +17,24 @@ export default function YourArtDetail(){
 
     
     return ( 
-        <div>
-            <img width={150} src={`https://www.artic.edu/iiif/2/${artDetail.image_id}/full/843,/0/default.jpg`} /> 
-            <h2>{artDetail.title}</h2>
-            <p>{artDetail.artist_title}</p>
-            <p>{artDetail.place_of_origin}</p>
-        </div>
+        <section> 
+            <NavLink
+                to=".."
+                relative="path"
+                className="back-button"
+            >&larr; 
+               <span>Back to all art</span>
+            </NavLink>
+            <div className="host-van-detail-layout-container">
+                <div className="host-van-detail">
+                    <img width={150} src={`https://www.artic.edu/iiif/2/${artDetail.image_id}/full/843,/0/default.jpg`} /> 
+                    <div className="host-van-detail-info-text">
+                        <h2>{artDetail.title}</h2>
+                        <p>{artDetail.artist_title}</p>
+                        <p>{artDetail.place_of_origin}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }
