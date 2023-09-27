@@ -12,9 +12,10 @@ export default function HostLayout(){
     return( 
         <> 
             <header> 
-                
+
                 <NavLink 
                     to="/dashboard" 
+                    end
                     style={({isActive}) => isActive ? linkStyle : null}
                 >
                     Dashboard
