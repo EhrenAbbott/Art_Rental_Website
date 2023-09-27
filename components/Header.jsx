@@ -14,21 +14,21 @@ export default function Header(){
                 <Link className='site-logo' to="/">Rent the Gallery</Link>
                 
                 <NavLink 
-                    to="/dashboard" 
+                    to="dashboard" 
                     style={({isActive}) => isActive ? linkStyle : null}
                 >
                     Artist Portal
                 </NavLink>
 
                 <NavLink 
-                    to="/about" 
+                    to="about" 
                     style={({isActive}) => isActive ? linkStyle : null}
                 >
                     About
                 </NavLink>
 
                 <NavLink 
-                    to="/vans" 
+                    to="vans" 
                     style={({isActive}) => isActive ? linkStyle : null}
                 >
                     Artwork

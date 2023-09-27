@@ -14,7 +14,7 @@ export default function HostLayout(){
             <header> 
 
                 <NavLink 
-                    to="/dashboard" 
+                    to="." 
                     end
                     style={({isActive}) => isActive ? linkStyle : null}
                 >
@@ -22,21 +22,21 @@ export default function HostLayout(){
                 </NavLink>
 
                 <NavLink 
-                    to="/dashboard/income" 
+                    to="income" 
                     style={({isActive}) => isActive ? linkStyle : null}
                 >
                     Income
                 </NavLink>
 
                 <NavLink 
-                    to="/dashboard/yourartwork" 
+                    to="yourartwork" 
                     style={({isActive}) => isActive ? linkStyle : null}
                 >
                     Your Artwork
                 </NavLink>
 
                 <NavLink 
-                    to="/dashboard/reviews" 
+                    to="reviews" 
                     style={({isActive}) => isActive ? linkStyle : null}
                 >
                     Reviews

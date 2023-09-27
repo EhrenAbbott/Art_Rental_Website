@@ -73,7 +73,9 @@ import { BrowserRouter, Routes } from "react-router-dom";
 
 //##########################################################################
 
-// 13. 
+// 13. If a route is acquired/inherited from a parent route using "index", 
+// what would be the relative (as opposed to absolute) way to link to this route
+// from another page? NB: the absolute would be <NavLink to="/host"></NavLink>
 
 //##########################################################################
 
