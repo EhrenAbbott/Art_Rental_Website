@@ -58,6 +58,8 @@ export default function YourArtwork(){
                 <div className="host-van-info">
                     <h3>{artwork.title}</h3>
                     <p>${Math.floor(Math.random() * 1000)}/week</p>
+                    <p>Artist: {artwork.artist_title}</p>
+                    <p>{artwork.place_of_origin}</p>
                 </div>
             </div>
         </Link>
@@ -73,7 +75,7 @@ export default function YourArtwork(){
                                 {mappedUserArt}
                             </section>
                         ) : ( 
-                            <h2>Loading...</h2>
+                            <h2>No Artwork added yet</h2>
                         )
                     }
                 </div>

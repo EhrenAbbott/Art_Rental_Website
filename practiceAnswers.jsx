@@ -1,6 +1,6 @@
 //##########################################################################
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 // 1.  ***NOT BEST PRACTICE!***
 //--------------------index.jsx------------------------------------
@@ -327,7 +327,14 @@ import { NavLink } from "react-router-dom";
 
 //##########################################################################
 
-// 12. 
+// 12.  
+
+    // const { id } = useParams()
+
+//NOTE: Assuming we were on a page whose route was something like /host/:id 
+// (the import part being the :id), the above const id would return the value of
+// that :id; so if we are at /host/34542, id would equal 34542. Because this is 
+// a dynamic value, it would change depending on that that value currently is. 
 
 //##########################################################################
 

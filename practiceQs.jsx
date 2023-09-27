@@ -68,7 +68,8 @@ import { BrowserRouter, Routes } from "react-router-dom";
 
 //##########################################################################
 
-// 12. 
+// 12. Destructure a route parameter to use its variable endpoint (is that waht it's called?)
+//     as a JS variable 
 
 //##########################################################################
 
