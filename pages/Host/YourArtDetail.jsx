@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, NavLink, Link } from "react-router-dom";
+import { useParams, NavLink, Link, Outlet } from "react-router-dom";
 
 export default function YourArtDetail(){ 
 
@@ -34,6 +34,7 @@ export default function YourArtDetail(){
                         <p>{artDetail.place_of_origin}</p>
                     </div>
                 </div>
+                <Outlet />
             </div>
         </section>
     )

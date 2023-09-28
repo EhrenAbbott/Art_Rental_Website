@@ -339,12 +339,20 @@ import { NavLink, useParams } from "react-router-dom";
 //##########################################################################
 
 // 13.  
-    <NavLink to=".">Link text</NavLink>
+    // <NavLink to=".">Link text</NavLink>
 
 //##########################################################################
 
-// 14. 
+// 14.  
+    // <Navlink to=".." relative="path">Back</Navlink>
 
+//NOTE: the '..' tells it to go to the previous level, however as it it will infer 
+// the parent ROUTE; as the route are established in this app, that would take it back to 
+// the Dashboard page, as that acquires the parent route path. However we want to
+// go from YouArtworkDetail to YourArtwork, which are actually siblings even thoguh one
+// path is an extension of the other due to how we set up the routes. So to get it to navigate 
+// back to the PATH parent and not the route parent, we would tell it this by using relative="path"
+// 
 //##########################################################################
 
 // 15. 

@@ -13,6 +13,9 @@ import Dashboard from "/pages/Host/Dashboard.jsx"
 import HostLayout from '../components/HostLayout.jsx'
 import YourArtwork from './Host/YourArtwork.jsx'
 import YourArtDetail from './Host/YourArtDetail.jsx'
+import YourArtInfo from './Host/YourArtInfo.jsx'
+import YourArtPhotos from './Host/YourArtPhotos.jsx'
+import YourArtPricing from './Host/YourArtPricing.jsx'
 
 
 
@@ -33,7 +36,11 @@ function App(){
             <Route path='income' element={<Income />}/>
             <Route path='reviews' element={<Reviews />}/>
             <Route path="yourartwork" element={<YourArtwork />}/>
-            <Route path="yourartwork/:id" element={<YourArtDetail />}/>
+            <Route path="yourartwork/:id" element={<YourArtDetail />}>
+              <Route index element={<YourArtInfo />} />
+              <Route path="photos" element={<YourArtPhotos />} />
+              <Route path="pricing" index element={<YourArtPricing />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
