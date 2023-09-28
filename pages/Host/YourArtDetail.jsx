@@ -4,8 +4,13 @@ import { useParams, NavLink, Link, Outlet } from "react-router-dom";
 export default function YourArtDetail(){ 
 
     const [artDetail, setArtDetail] = React.useState([])
-
     const { id } = useParams()
+
+    const activeStyles = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "#161616"
+    }
 
     React.useEffect(() => { 
         fetch(`https://api.artic.edu/api/v1/artworks/${id}`)
@@ -38,18 +43,22 @@ export default function YourArtDetail(){
 
                     <NavLink
                         to="."
+                        end
+                        style={({ isActive }) => isActive ? activeStyles : null}
                     >
                         Details
                     </NavLink>
 
                     <NavLink
                         to="pricing"
+                        style={({ isActive }) => isActive ? activeStyles : null}
                     >
                         Info
                     </NavLink>
 
                     <NavLink
                         to="photos"
+                        style={({ isActive }) => isActive ? activeStyles : null}
                     >
                         Pricing
                     </NavLink>
