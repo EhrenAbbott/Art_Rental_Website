@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, NavLink, Link, Outlet } from "react-router-dom";
+import { useParams, NavLink, Link, Outlet, useOutletContext } from "react-router-dom";
 
 export default function YourArtDetail(){ 
 
@@ -64,7 +64,7 @@ export default function YourArtDetail(){
                     </NavLink>
 
                 </nav>
-                <Outlet />
+                <Outlet context={{ artDetail }}/>
             </div>
         </section>
     )

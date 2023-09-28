@@ -83,7 +83,9 @@ import { BrowserRouter, Routes } from "react-router-dom";
 
 //##########################################################################
 
-// 15. 
+// 15. A parent route is displaying its contents in a child route; 
+//     Pass the state information to the child route so, on the child page/component, 
+//     it can use and displayed info from the parent state. 
 
 //##########################################################################
 

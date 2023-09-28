@@ -355,7 +355,48 @@ import { NavLink, useParams } from "react-router-dom";
 // 
 //##########################################################################
 
-// 15. 
+// 15. A parent route is displaying its contents in a child route; 
+//     Pass the state information to the child route so, on the child page/component, 
+//     it can use and displayed info from the parent state. 
+
+//--------------------Parent.jsx------------------------------------
+
+// import React from "react"
+// import { Outlet, useOutletContext } from "react-router-dom"
+
+// export default function Parent(){ 
+
+//     const [currentVan, setCurrentVan] = React.useState(null)
+
+//     return( 
+//         <> 
+//             <h1>text text text</h1>
+//             <Outlet context={{ currentVan }} />
+//         </>
+//     )
+// }
+//NOTE:  Here the context prop has two sets of curly brackets; the first 
+// is to allow the transition into JS, the second is to destructure to currentVan 
+// state object
+
+//--------------------Child.jsx------------------------------------
+
+// import React from "react"
+// import { useOutletContext } from 'react-router-dom'
+
+// export default function Child() {
+    
+//     const { currentVan } =  useOutletContext();
+    
+//     return (
+//         <>
+//             <h1>{currentVan.name}</h1>
+//         </>
+//     )
+// }
+
+//NOTE: Since currentVan is an objecct, you can access its properties w/ 
+// dot notation. 
 
 //##########################################################################
 
