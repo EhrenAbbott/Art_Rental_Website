@@ -34,6 +34,27 @@ export default function YourArtDetail(){
                         <p>{artDetail.place_of_origin}</p>
                     </div>
                 </div>
+                <nav className="host-van-detail-nav"> 
+
+                    <NavLink
+                        to="."
+                    >
+                        Details
+                    </NavLink>
+
+                    <NavLink
+                        to="pricing"
+                    >
+                        Info
+                    </NavLink>
+
+                    <NavLink
+                        to="photos"
+                    >
+                        Pricing
+                    </NavLink>
+
+                </nav>
                 <Outlet />
             </div>
         </section>
