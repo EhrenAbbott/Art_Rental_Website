@@ -53,14 +53,14 @@ export default function YourArtDetail(){
                         to="pricing"
                         style={({ isActive }) => isActive ? activeStyles : null}
                     >
-                        Info
+                        Pricing
                     </NavLink>
 
                     <NavLink
                         to="photos"
                         style={({ isActive }) => isActive ? activeStyles : null}
                     >
-                        Pricing
+                        Photos
                     </NavLink>
 
                 </nav>

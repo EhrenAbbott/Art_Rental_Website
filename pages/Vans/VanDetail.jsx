@@ -19,7 +19,6 @@ export default function VanDetail() {
                     <img src={`https://www.artic.edu/iiif/2/${art.image_id}/full/843,/0/default.jpg`} />
                     <h2>{art.title}</h2>
                     { art.place_of_origin && <h5>Origin: {art.place_of_origin}</h5> }
-                    {/* <p className="van-price"><span>${van.price}</span>/day</p> */}
                     <p>{art.medium_display}</p>
                     <button className="link-button">Rent this piece of art</button>
                 </div>

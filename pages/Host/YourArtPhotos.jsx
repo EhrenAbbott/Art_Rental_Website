@@ -7,6 +7,7 @@ export default function YourArtPhotos(){
     const { artDetail } = useOutletContext();
 
     return( 
-        <h1>Your art Photos</h1>
+        <img src={`https://www.artic.edu/iiif/2/${artDetail.image_id}/full/843,/0/default.jpg`} className="host-van-detail-image" />
+
     )
 }

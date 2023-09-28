@@ -7,6 +7,8 @@ export default function YourArtPricing(){
     const { artDetail } = useOutletContext();
 
     return( 
-        <h1>Your art Pricing</h1>
+        <> 
+            <h3 className="host-van-price">$100<span>/day</span></h3>
+        </>
     )
 }
