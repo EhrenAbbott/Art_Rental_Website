@@ -1,12 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 
 export default function Vans(){
     
     const [art, setArt] = React.useState([])
     const [page, setPage] = React.useState(1)
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const typeFilter = searchParams.get("type")
 
     function loadMore(){ 
         setPage(prevPage => prevPage + 1)

@@ -400,7 +400,25 @@ import { NavLink, useParams } from "react-router-dom";
 
 //##########################################################################
 
-// 16. 
+// 16.  
+
+// import { useSearchParams } from "react-router-dom";
+
+// export default function App(){ 
+
+//     const [searchParams, setSearchParams] = useSearchParams()
+//     console.log(searchParams.get("type"))
+//     console.log(searchParams.toString())
+
+//     return( 
+//         <></>
+//     )
+// }
+
+//NOTE: searchParams is an instance of an object, so it has a whole set 
+// of methods that can be used.
+//ALSO: note that state lives inside of its component, but the searchparams live
+// up in the URL.
 
 //##########################################################################
 

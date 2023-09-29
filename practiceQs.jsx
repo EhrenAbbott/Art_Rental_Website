@@ -89,7 +89,10 @@ import { BrowserRouter, Routes } from "react-router-dom";
 
 //##########################################################################
 
-// 16. 
+// 16.  Destructure an array of search parameters. 
+// Assumging URL '/characters?type=sith', use the correct method
+// to retrieve the type used in the search query. 
+// Do the same but retrieve the entire search query. 
 
 //##########################################################################
 
