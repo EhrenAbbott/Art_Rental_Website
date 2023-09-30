@@ -57,21 +57,21 @@ export default function Vans(){
             <div className='van-list-filter-buttons'>
                 <button 
                     onClick={() => setSearchParams({place_of_origin: "spain"})}
-                    className='van-type spain'
+                    className={`van-type spain ${typeFilter === "spain" ? "selected" : ""}`}
                 >
                     Spain
                 </button> 
 
                 <button
                     onClick={() => setSearchParams({place_of_origin: "korea"})}
-                    className='van-type korea'
+                    className={`van-type korea ${typeFilter === "korea" ? "selected" : ""}`}
                 >
                     Korea
                 </button>
 
                 <button 
                     onClick={() => setSearchParams({place_of_origin: "germany"})} 
-                    className='van-type germany'
+                    className={`van-type germany ${typeFilter === "germany" ? "selected" : ""}`}
                 >
                     Germany
                 </button>
