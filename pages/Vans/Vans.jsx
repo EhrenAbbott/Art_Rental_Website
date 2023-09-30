@@ -76,11 +76,11 @@ export default function Vans(){
                     Germany
                 </button>
 
-                <button 
+                { typeFilter && <button 
                     onClick={() => setSearchParams({})}
                 >
                     Clear
-                </button>
+                </button>}
 
             </div>
             <div className='van-list'>
