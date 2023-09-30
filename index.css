@@ -436,3 +436,8 @@ footer {
   border-radius: 5px;
 }
 
+.art-detail-back-button { 
+  position: relative;
+  right: 40%;
+}
+
