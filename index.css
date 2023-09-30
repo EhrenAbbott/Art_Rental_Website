@@ -173,6 +173,7 @@ a:hover {
 }
 
 .van-type {
+  margin: 10px;
   height: 34px;
   padding: 6px 26px;
   font-style: normal;
@@ -198,15 +199,16 @@ a:hover {
   color: #FFEAD0;
 }
 
-.van-type.simple:hover, .van-type.simple.selected {
+.van-type.germany:hover, .van-type.germany.selected {
   background-color: #E17654;
+
 }
 
-.van-type.rugged:hover, .van-type.rugged.selected {
+.van-type.spain:hover, .van-type.spain.selected {
   background-color: #115E59;
 }
 
-.van-type.luxury:hover, .van-type.luxury.selected {
+.van-type.korea:hover, .van-type.korea.selected {
   background-color: #161616;
 }
 
@@ -433,3 +435,4 @@ footer {
   height: 100px;
   border-radius: 5px;
 }
+

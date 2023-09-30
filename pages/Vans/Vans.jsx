@@ -54,10 +54,12 @@ export default function Vans(){
 
     return( 
         <div className='van-list-container'>
-            <Link to="?place_of_origin=spain">Spain</Link>  
-            <Link to="?place_of_origin=korea">Korea</Link>
-            <Link to="?place_of_origin=germany">Germany</Link>
-            <Link to="">Clear</Link>
+            <div className='van-list-filter-buttons'>
+                <Link to="?place_of_origin=spain" className='van-type spain'>Spain</Link>  
+                <Link to="?place_of_origin=korea" className='van-type korea'>Korea</Link>
+                <Link to="?place_of_origin=germany" className='van-type germany'>Germany</Link>
+                <Link to="">Clear</Link>
+            </div>
             <div className='van-list'>
                 {mappedArt}
             </div> 
