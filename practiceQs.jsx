@@ -126,7 +126,10 @@ import { BrowserRouter, Routes, useSearchParams } from "react-router-dom";
 
 //##########################################################################
 
-// 19. 
+// 19. Instead of using Link with the "to" prop, use a button to change 
+//     the query parameters
+
+<button onClick={() => setSearchParams({place_of_origin: "spain"})}>Spain</button> 
 
 //##########################################################################
 

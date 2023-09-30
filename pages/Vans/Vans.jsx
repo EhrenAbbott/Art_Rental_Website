@@ -55,10 +55,33 @@ export default function Vans(){
     return( 
         <div className='van-list-container'>
             <div className='van-list-filter-buttons'>
-                <Link to="?place_of_origin=spain" className='van-type spain'>Spain</Link>  
-                <Link to="?place_of_origin=korea" className='van-type korea'>Korea</Link>
-                <Link to="?place_of_origin=germany" className='van-type germany'>Germany</Link>
-                <Link to="">Clear</Link>
+                <button 
+                    onClick={() => setSearchParams({place_of_origin: "spain"})}
+                    className='van-type spain'
+                >
+                    Spain
+                </button> 
+
+                <button
+                    onClick={() => setSearchParams({place_of_origin: "korea"})}
+                    className='van-type korea'
+                >
+                    Korea
+                </button>
+
+                <button 
+                    onClick={() => setSearchParams({place_of_origin: "germany"})} 
+                    className='van-type germany'
+                >
+                    Germany
+                </button>
+
+                <button 
+                    onClick={() => setSearchParams({})}
+                >
+                    Clear
+                </button>
+
             </div>
             <div className='van-list'>
                 {mappedArt}
