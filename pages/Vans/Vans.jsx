@@ -37,7 +37,7 @@ export default function Vans(){
     console.log(filteredArt)
 
     const mappedArt = filteredArt.map(data => data.image_id && ( 
-        <Link to={`/vans/${data.id}`}>
+        <Link to={`${data.id}`}>
             <div className='van-tile'>
                     <img src={`https://www.artic.edu/iiif/2/${data.image_id}/full/843,/0/default.jpg`} /> 
                     <div className='van-info'>

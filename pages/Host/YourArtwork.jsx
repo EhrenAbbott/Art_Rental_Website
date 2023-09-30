@@ -48,7 +48,7 @@ export default function YourArtwork(){
 
     const mappedUserArt = userArtData.map(artwork => ( 
         <Link
-            to={`/dashboard/yourartwork/${artwork.id}`}
+            to={`${artwork.id}`}
             key={artwork.id}
             className="host-van-link-wrapper"
         >
