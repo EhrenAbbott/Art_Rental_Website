@@ -1,6 +1,6 @@
 //##########################################################################
 
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, useSearchParams } from "react-router-dom";
 
 // 1. Import/set up Browser Router, Routes, and Route. 
 //    Have .createRoot render  a component called App. 
@@ -96,11 +96,33 @@ import { BrowserRouter, Routes } from "react-router-dom";
 
 //##########################################################################
 
-// 17. 
+// 17. Given an array and a URL with a query: 
+
+        // /characters?type=sith
+
+        // const swCharacters = [
+        //     { name: "Luke Skywalker", type: "Jedi" },
+        //     { name: "Darth Vader", type: "Sith" },
+        //     { name: "Emperor Palpatine", type: "Sith" },
+        //     { name: "Yoda", type: "Jedi" }
+        // ] 
+
+        // Create a variable equal to the value of the search query
+       
+        // Filter the contents of swCharacters to yield all objects 
+        // that have a type that is the same as the search query value. 
+            // So, if the URl has 'sith' as the type, make the filter produce, 
+            // all of the swCharacter objects that also have a type of "sith"
+        
+        // Create a new variable and have its value be the results of the filter, 
+        // IF the search query did actually have a value. 
+        // Otherwise have the new variable be equivalent to the entire swCharacters Array
+
+
 
 //##########################################################################
 
-// 18. 
+// 18.  Create a button that adds a query to the URL
 
 //##########################################################################
 

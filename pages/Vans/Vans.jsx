@@ -9,7 +9,8 @@ export default function Vans(){
     const [page, setPage] = React.useState(1)
     const [searchParams, setSearchParams] = useSearchParams()
 
-    const typeFilter = searchParams.get("type")
+    const typeFilter = searchParams.get("place_of_origin")
+    // console.log(typeFilter)
 
     function loadMore(){ 
         setPage(prevPage => prevPage + 1)
@@ -27,11 +28,17 @@ export default function Vans(){
             .then(data => setArt(data.data))
     }, [page]) 
 
-    console.log(art)
+    // console.log(art)
 
-    const mappedArt = art.map(data => data.image_id && ( 
+    const filteredArt = typeFilter 
+        ? art.filter(item => item.place_of_origin.toLowerCase() === typeFilter)
+        : art 
+    
+    console.log(filteredArt)
+
+    const mappedArt = filteredArt.map(data => data.image_id && ( 
         <Link to={`/vans/${data.id}`}>
-            <div key={data.id} className='van-tile'>
+            <div className='van-tile'>
                     <img src={`https://www.artic.edu/iiif/2/${data.image_id}/full/843,/0/default.jpg`} /> 
                     <div className='van-info'>
                         <h3>{data.title}</h3> 
@@ -46,8 +53,12 @@ export default function Vans(){
 
 
     return( 
-        <div className='van-list-container'>  
-            <div  className='van-list'>
+        <div className='van-list-container'>
+            <Link to="?place_of_origin=spain">Spain</Link>  
+            <Link to="?place_of_origin=korea">Korea</Link>
+            <Link to="?place_of_origin=germany">Germany</Link>
+            <Link to="">Clear</Link>
+            <div className='van-list'>
                 {mappedArt}
             </div> 
             <div className='page-btn-div'>
