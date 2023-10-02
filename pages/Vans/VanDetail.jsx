@@ -1,9 +1,12 @@
 import React from 'react'
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, useLocation } from "react-router-dom"
 
 export default function VanDetail() { 
 
     const params = useParams()
+    const location = useLocation();
+    const search = location.state?.search || ""
+    // console.log(location)
     const [art, setArt] = React.useState(null)
 
     React.useEffect(() => { 
@@ -17,7 +20,7 @@ export default function VanDetail() {
             {art ? (
                 <div className="van-detail">
                     <Link
-                        to=".."
+                        to={`..${search}`}
                         relative="path"
                         className="back-button art-detail-back-button"
                     >&larr;

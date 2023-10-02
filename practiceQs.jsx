@@ -1,6 +1,7 @@
 //##########################################################################
 
 import { BrowserRouter, Routes, useSearchParams } from "react-router-dom";
+import VanDetail from "./pages/Vans/VanDetail";
 
 // 1. Import/set up Browser Router, Routes, and Route. 
 //    Have .createRoot render  a component called App. 
@@ -129,11 +130,14 @@ import { BrowserRouter, Routes, useSearchParams } from "react-router-dom";
 // 19. Instead of using Link with the "to" prop, use a button to change 
 //     the query parameters
 
-{/* <button onClick={() => setSearchParams({place_of_origin: "spain"})}>Spain</button>  */}
-
-
 //##########################################################################
 
-// 20. 
+// 20. Say you apply a filter in the Vans page and then click on a specific van to 
+// view that van' detail page. Normall, if you went to the van detail page and then 
+// clciked the back button to go back to the Vans page, your query params in the URL would 
+// not be preserved and would not longer be there. 
+// How would you make it so that the query params get preserved when going back to
+// vans page?
+// HINT: -->                                                                                                                It involves state
 
 //##########################################################################

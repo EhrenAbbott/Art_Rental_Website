@@ -477,10 +477,52 @@ import { NavLink, useParams } from "react-router-dom";
 // 19. Instead of using Link with the "to" prop, use a button to change 
 //     the query parameters
 
+    // <button onClick={() => setSearchParams({place_of_origin: "spain"})}>Spain</button>
 
 
 //##########################################################################
 
-// 20. 
+// 20. Say you apply a filter in the Vans page and then click on a specific van to 
+// view that van' detail page. Normall, if you went to the van detail page and then 
+// clciked the back button to go back to the Vans page, your query params in the URL would 
+// not be preserved and would not longer be there. 
+// How would you make it so that the query params get preserved when going back to
+// vans page?
+// HINT: -->                                                                                                                It involves state
 
+//--------------------Vans.jsx------------------------------------
+
+    // <Link to={van.id} state={{ search: `?${useSearchParams.toString()}` }}></Link>
+
+
+// NOTE: Here we are choosing to pass in an object with a key that we are choosing to call 'search'
+// whose value will be the entire query string of our searchParams. Remember that 
+// .toString() yields the entire query string EXCEPT the '?', so if you need the question 
+// mark you would have to add it with string interpolation. 
+
+// ALSO: here, state is actually refererring to "history state" and not React state; 
+// the browser has the ability oto save some sort of state between one URl and the next; 
+// React touter makes it easy to add things to that link state.
+
+//--------------------VanDetail.jsx------------------------------------
+
+import { useLocation } from 'react-router-dom';
+
+export default function VanDetail(){ 
+    const location = useLocation()
+
+    const search = location.state?.search || ""
+
+    return( 
+        <Link to={`..${search}`}></Link>
+    )
+
+}
+
+//NOTE:  useLocation() gives us an object with severa different properties, 
+// such as pathname, search (any query string we have), hash and state.
+
+// ALSO: the '?' in location.state?.search is a very new JS feature called "objecti chaining"; 
+// It is saying: if location.search exists, check for a property called search, 
+// but if that doesn't exist, it will be an empty string. 
 //##########################################################################
