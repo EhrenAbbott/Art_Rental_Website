@@ -74,42 +74,42 @@ export default function Vans(){
             <div className='van-list-filter-buttons'>
                 <button 
                     onClick={() => handleFilterChange("place_of_origin", "Spain")}
-                    className={`van-type spain ${typeFilter === "spain" ? "selected" : ""}`}
+                    className={`van-type spain ${typeFilter === "Spain" ? "selected" : ""}`}
                 >
                     Spain
                 </button> 
 
                 <button 
                     onClick={() => handleFilterChange("place_of_origin", "France")}
-                    className={`van-type france ${typeFilter === "france" ? "selected" : ""}`}
+                    className={`van-type france ${typeFilter === "France" ? "selected" : ""}`}
                 >
                     France
                 </button> 
 
                 <button 
                     onClick={() => handleFilterChange("place_of_origin", "England")}
-                    className={`van-type england ${typeFilter === "england" ? "selected" : ""}`}
+                    className={`van-type england ${typeFilter === "England" ? "selected" : ""}`}
                 >
                     England
                 </button>
 
                 <button
                     onClick={() => handleFilterChange("place_of_origin", "Korea")}
-                    className={`van-type korea ${typeFilter === "korea" ? "selected" : ""}`}
+                    className={`van-type korea ${typeFilter === "Korea" ? "selected" : ""}`}
                 >
                     Korea
                 </button>
 
                 <button 
                     onClick={() => handleFilterChange("place_of_origin", "Germany")}
-                    className={`van-type germany ${typeFilter === "germany" ? "selected" : ""}`}
+                    className={`van-type germany ${typeFilter === "Germany" ? "selected" : ""}`}
                 >
                     Germany
                 </button>
 
                 <button 
                     onClick={() => handleFilterChange("place_of_origin", "United States")}
-                    className={`van-type united_states ${typeFilter === "united_states" ? "selected" : ""}`}
+                    className={`van-type united_states ${typeFilter === "United States" ? "selected" : ""}`}
                 >
                     United States
                 </button>
