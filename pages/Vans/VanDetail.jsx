@@ -9,11 +9,17 @@ export default function VanDetail() {
     // console.log(location)
     const [art, setArt] = React.useState(null)
 
+
     React.useEffect(() => { 
         fetch(`https://api.artic.edu/api/v1/artworks/${params.id}`)
             .then(res => res.json())
             .then(data => setArt(data.data))
     }, [params.id])
+
+
+    console.log(location.state.type)
+
+    const backButtonText = location.state.type === "United States" ? "the United States" : location.state.type
 
     return (
         <div className="van-detail-container">
@@ -24,7 +30,12 @@ export default function VanDetail() {
                         relative="path"
                         className="back-button art-detail-back-button"
                     >&larr;
-                        <span>Back to all art</span>
+                        <span>
+                            { location.state.type === null
+                                ? "Back to all art" 
+                                : `Back to art from ${backButtonText}`
+                                }
+                        </span>
                     </Link>
 
                     <img src={`https://www.artic.edu/iiif/2/${art.image_id}/full/843,/0/default.jpg`} />

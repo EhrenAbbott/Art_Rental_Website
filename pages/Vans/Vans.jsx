@@ -10,7 +10,8 @@ export default function Vans(){
     const [searchParams, setSearchParams] = useSearchParams()
 
     const typeFilter = searchParams.get("place_of_origin")
-    // console.log(typeFilter)
+    // console.log(`typeFilter: ${typeFilter}`)
+
 
     function loadMore(){ 
         setPage(prevPage => prevPage + 1)
@@ -34,12 +35,14 @@ export default function Vans(){
         ? art.filter(item => item.place_of_origin === typeFilter)
         : art 
     
-    console.log(filteredArt)
 
     const mappedArt = filteredArt.map(data => data.image_id && ( 
         <Link 
             to={`${data.id}`}
-            state={{ search: `?${searchParams.toString()}`}}
+            state={{ 
+                search: `?${searchParams.toString()}`,
+                type: typeFilter
+            }}
         >
             <div className='van-tile'>
                     <img src={`https://www.artic.edu/iiif/2/${data.image_id}/full/843,/0/default.jpg`} /> 
@@ -114,7 +117,7 @@ export default function Vans(){
                 { typeFilter && <button 
                     onClick={() => setSearchParams({})}
                 >
-                    Clear
+                    Clear Filter
                 </button>}
 
             </div>
