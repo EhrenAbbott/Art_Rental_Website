@@ -204,8 +204,22 @@ a:hover {
 
 }
 
+.van-type.united_states:hover, .van-type.united_states.selected {
+  background-color: #429d18;
+
+}
+
+.van-type.france:hover, .van-type.france.selected {
+  background-color: #E11199;
+
+}
+
 .van-type.spain:hover, .van-type.spain.selected {
   background-color: #115E59;
+}
+
+.van-type.england:hover, .van-type.england.selected {
+  background-color: #115E91;
 }
 
 .van-type.korea:hover, .van-type.korea.selected {
