@@ -16,6 +16,7 @@ import YourArtDetail from './Host/YourArtDetail.jsx'
 import YourArtInfo from './Host/YourArtInfo.jsx'
 import YourArtPhotos from './Host/YourArtPhotos.jsx'
 import YourArtPricing from './Host/YourArtPricing.jsx'
+import NotFound from './NotFound.jsx'
 
 
 
@@ -27,7 +28,6 @@ function App(){
     <BrowserRouter> 
       <Routes>
         <Route element={<Layout />}> 
-          <Route path="*" element={<h1>Page not found!</h1>} />
           <Route path="/" element={<Home />}/>
           <Route path="about" element={<About />}/>
           <Route path='vans' element={<Vans />} />
@@ -43,6 +43,7 @@ function App(){
               <Route path="pricing" index element={<YourArtPricing />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

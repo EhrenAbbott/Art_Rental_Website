@@ -455,3 +455,25 @@ footer {
   right: 40%;
 }
 
+/* NOT FOUND PAGE */
+.not-found {
+  background-color: #161616;
+  color: #AAAAAA;
+  height: 74px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-weight: 500;
+}
+
+.not-found-container { 
+  justify-content: center;
+  text-align: center;
+}
+
+.not-found:hover { 
+  color: white;
+}
