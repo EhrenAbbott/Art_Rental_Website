@@ -27,6 +27,7 @@ function App(){
     <BrowserRouter> 
       <Routes>
         <Route element={<Layout />}> 
+          <Route path="*" element={<h1>Page not found!</h1>} />
           <Route path="/" element={<Home />}/>
           <Route path="about" element={<About />}/>
           <Route path='vans' element={<Vans />} />
