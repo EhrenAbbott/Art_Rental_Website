@@ -21,6 +21,9 @@ export default function VanDetail() {
 
     const backButtonText = location.state.type === "United States" ? "the United States" : location.state.type
 
+    //TODO: fix back button in art YourArtwork detail page so that pricing and photos links 
+    // return to ArtDetail page instead of Info
+
     return (
         <div className="van-detail-container">
             {art ? (

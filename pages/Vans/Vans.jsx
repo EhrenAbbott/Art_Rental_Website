@@ -9,6 +9,7 @@ export default function Vans(){
     const [art, setArt] = React.useState([])
     const [page, setPage] = React.useState(1)
     const [searchParams, setSearchParams] = useSearchParams()
+    const [loading, setLoading] = React. useState(false)
 
     const typeFilter = searchParams.get("place_of_origin")
     // console.log(`typeFilter: ${typeFilter}`)
@@ -32,8 +33,10 @@ export default function Vans(){
 
     React.useEffect(() => { 
         async function loadArt() { 
+            setLoading(true)
             const data = await getArt(page)
             setArt(data.data)
+            setLoading(false)
         }
 
         loadArt()
@@ -77,7 +80,9 @@ export default function Vans(){
         })
     }
 
-
+    if (loading) { 
+        return <h1>Loading...</h1>
+    }
 
     return( 
         <div className='van-list-container'>
