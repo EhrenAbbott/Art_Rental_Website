@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import { getArt } from '../../api'
 
 
 export default function Vans(){
@@ -23,13 +24,22 @@ export default function Vans(){
 
     
 
-    React.useEffect(() => { 
-        fetch(`https://api.artic.edu/api/v1/artworks?page=${page}`)
-            .then(res => res.json())
-            .then(data => setArt(data.data))
-    }, [page]) 
+    // React.useEffect(() => { 
+    //     fetch(`https://api.artic.edu/api/v1/artworks?page=${page}`)
+    //         .then(res => res.json())
+    //         .then(data => setArt(data.data))
+    // }, [page]) 
 
-    // console.log(art)
+    React.useEffect(() => { 
+        async function loadArt() { 
+            const data = await getArt(page)
+            setArt(data.data)
+        }
+
+        loadArt()
+    }, [page])
+
+    console.log(art)
 
     const filteredArt = typeFilter 
         ? art.filter(item => item.place_of_origin === typeFilter)
