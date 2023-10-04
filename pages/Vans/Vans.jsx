@@ -10,6 +10,7 @@ export default function Vans(){
     const [page, setPage] = React.useState(1)
     const [searchParams, setSearchParams] = useSearchParams()
     const [loading, setLoading] = React. useState(false)
+    const [error, setError] = React.useState(null)
 
     const typeFilter = searchParams.get("place_of_origin")
     // console.log(`typeFilter: ${typeFilter}`)
@@ -31,12 +32,20 @@ export default function Vans(){
     //         .then(data => setArt(data.data))
     // }, [page]) 
 
+    //TODO create API functions and to use in useEffect for other components fetching data
+
     React.useEffect(() => { 
         async function loadArt() { 
             setLoading(true)
-            const data = await getArt(page)
-            setArt(data.data)
-            setLoading(false)
+            try { 
+                const data = await getArt(page)
+                setArt(data.data)
+            } catch(err) { 
+                console.log(err)
+                setError(err)
+            } finally { 
+                setLoading(false)
+            }
         }
 
         loadArt()
@@ -78,10 +87,17 @@ export default function Vans(){
             }
             return prevParams
         })
-    }
+    } 
+
+    //TODO implement loading state for other components using fetch requests
+    //TODO implement error state and error handlign for other components using fetch requests. 
 
     if (loading) { 
         return <h1>Loading...</h1>
+    }
+
+    if (error) { 
+        return <h1>There was an error: {error.message}</h1>
     }
 
     return( 
