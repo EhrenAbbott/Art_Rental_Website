@@ -146,15 +146,79 @@ import VanDetail from "./pages/Vans/VanDetail";
 
 //##########################################################################
 
-// 22.
+// 22. Write an async fucntion in api.jsc that gets data from an api.
+//      Update useEffect in Vans.jsx to use this api function. 
+
+//--------------------api.jsx------------------------------------
+
+
+//--------------------Vans.jsx------------------------------------
+
 
 //##########################################################################
 
-// 23.
+// 23. Do #22 except take into account a delay with loading the data. 
+// Assume an api function called getVans() that has been imported from another file. 
 
 //##########################################################################
 
-// 24.
+// 24. Building off of #22, and #23, code for the sad path, accounting for an error 
+// that could occur in the fetch request. 
+
+//--------------------Vans.jsx------------------------------------
+
+// export async function getVans() {
+
+//     const [error, setError] = React.useState(null)
+
+//     React.useEffect(() => {
+//         async function loadVans() {
+//             setLoading(true)
+//             try {
+//                 const data = await getVans()
+//                 setVans(data)
+//             } catch (err) {
+//                 setError(err)
+//             } finally {
+//                 setLoading(false)
+//             }
+//         }
+
+//         loadVans()
+//     }, [])
+
+//     if (error) {
+//         return <h1>There was an error: {error.message}</h1>
+//     }
+
+//     return ( 
+//         <></>
+//     )
+    
+// }
+
+//NOTE: .ok is built into fetch. 
+// ALSO: 'try' is used inside an async function bc you don't know for sure if 
+// it is going to work correctly, so the 'try' block tells it what to do if 
+// everything works-- the happy path. 
+// The 'catch' block determines what to do in the event of an error-- the sad path. 
+// We create some error state and set it to true in the catch block. 
+// The 'finally' block will run regardless of if the 'try' or the 'catch' 
+// blocks ran, and this just sets the loading state back to false. 
+// NOICE: that we also have an early return int he event of a fecth error. 
+
+//--------------------api.jsx------------------------------------
+
+// const res = await fetch("/api/vans")
+//     if (!res.ok) {
+//         throw {
+//             message: "Failed to fetch vans", 
+//             statusText: res.statusText,
+//             status: res.status
+//         }
+//     }
+//     const data = await res.json()
+//     return data.vans
 
 //##########################################################################
 

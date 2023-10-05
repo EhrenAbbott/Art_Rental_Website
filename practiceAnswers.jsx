@@ -534,11 +534,73 @@ export default function VanDetail(){
 
 //##########################################################################
 
-// 22.
+// 22. Write an async fucntion in api.jsc that gets data from an api.
+//      Update useEffect in Vans.jsx to use this api function. 
+
+//--------------------api.jsx------------------------------------
+
+    // export async function getVans() {
+    //     const res = await fetch("/api/vans")
+    //     const data = await res.json()
+    //     return data.vans
+    // }
+
+//--------------------Vans.jsx------------------------------------
+
+    // React.useEffect(() => {
+    //     async function loadVans() {
+    //         const data = await getVans()
+    //         setVans(data)
+    //     }
+        
+    //     loadVans()
+        
+    // }, [])
+
+// NOTE: you can't use an async function immedaitely inside of useEffect, 
+// so you have to create a function inside that function, and that nested function
+// can be async.
+// IMPORTANT: the way this is coded is the 'happy path'-- it assumed that there WON'T
+// be an error with the fetch request, so it does not take that into account. 
+// The following problem will be for the 'sad path' to factor in any error. 
+
 
 //##########################################################################
 
-// 23.
+// 23. Do #22 except take into account a delay with loading the data. 
+// Assume an api function called getVans() that has been imported from another file. 
+
+//--------------------Vans.jsx------------------------------------
+
+
+// export default function Vans() { 
+//     const [loading, setLoading ] = React.useState(false)
+
+//     React.useEffect(() => {
+//         async function loadVans() {
+//             setLoading(true)
+//             const data = await getVans()
+//             setVans(data)
+//             setLoading(false)
+//         }
+        
+//         loadVans()
+//     }, [])
+
+//     if (loading) {
+//         return <h1>Loading...</h1>
+//     }
+
+//     return ( 
+//         <></>
+//     )
+
+// }
+
+//Here we are just initializing some loading state and setting it to true
+// right before the fetch happens and then back to false after the fetch is complete. 
+// The first return is an early return statment to display thr h1 as long as the loading 
+// state is true. 
 
 //##########################################################################
 
