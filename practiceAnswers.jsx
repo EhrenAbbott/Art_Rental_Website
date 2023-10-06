@@ -506,18 +506,18 @@ import { NavLink, useParams } from "react-router-dom";
 
 //--------------------VanDetail.jsx------------------------------------
 
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
-export default function VanDetail(){ 
-    const location = useLocation()
+// export default function VanDetail(){ 
+//     const location = useLocation()
 
-    const search = location.state?.search || ""
+//     const search = location.state?.search || ""
 
-    return( 
-        <Link to={`..${search}`}></Link>
-    )
+//     return( 
+//         <Link to={`..${search}`}></Link>
+//     )
 
-}
+// }
 
 //NOTE:  useLocation() gives us an object with severa different properties, 
 // such as pathname, search (any query string we have), hash and state.
@@ -534,11 +534,94 @@ export default function VanDetail(){
 
 //##########################################################################
 
-// 22.
+// 22. Refactor fetch request to exist in its own api.js file as an async function. 
+// Refactor useEffect in Vans.jsx to use new async function.
+// Create state to handling loading times and errors. 
+
+//--------------------api.js------------------------------------
+
+// export async function getArt(page){ 
+//     const res = await fetch(`https://api.artic.edu/api/v1/artworks?page=${page}`)
+//     if (!res.ok) { 
+//         throw { 
+//             message: "Failed to fetch art", 
+//             statusText: res.statusText,
+//             status: res.status
+//         }
+//     }
+//     const data = await res.json()
+//     return data 
+// }
+
+//--------------------Vans.jsx------------------------------------
+
+// import { getArt } from '../../api'
+
+// export default function Vans() { 
+//     const [loading, setLoading] = React. useState(false)
+//     const [error, setError] = React.useState(null)
+    
+//     React.useEffect(() => { 
+//         async function loadArt() { 
+//             setLoading(true)
+//             try { 
+//                 const data = await getArt(page)
+//                 setArt(data.data)
+//             } catch(err) { 
+//                 console.log(err)
+//                 setError(err)
+//             } finally { 
+//                 setLoading(false)
+//             }
+//         }
+
+//         loadArt()
+//     }, [page])
+
+//     if (loading) { 
+//         return <h1>Loading...</h1>
+//     }
+
+//     if (error) { 
+//         return <h1>There was an error: {error.message}</h1>
+//     }
+
+//     return( 
+//         <></>
+//     )
+// }
+
+
 
 //##########################################################################
 
-// 23.
+// 23. Import the three things you need to change routes to support the newer one 
+// that supports API layers and laoders. 
+// Refactor routes to use these new imports.
+
+// import {
+//     Route,
+//     createBrowserRouter, 
+//     createRoutesFromElements, 
+//     RouterProvider
+//   } from 'react-router-dom'
+
+// const router = createBrowserRouter(createRoutesFromElements( 
+// <Route element={<Layout />}> 
+//     <Route path="/" element={<Home />}/>
+// </Route>
+// ))
+
+// function App(){ 
+
+// return (
+//     <RouterProvider router={router}/>
+// )
+// }
+
+//NOTE: This doesn't change anything in the UI, it is just another 
+// way of making routes that has more funcitonality and will allow API layers 
+// to be used
 
 //##########################################################################
 

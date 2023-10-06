@@ -146,11 +146,21 @@ import VanDetail from "./pages/Vans/VanDetail";
 
 //##########################################################################
 
-// 22.
+// 22. Refactor fetch request to exist in its own api.js file as an async function. 
+// Refactor useEffect in Vans.jsx to use new async function.
+// Create state to handling loading times and errors. 
+
+//--------------------api.js------------------------------------
+
+
+//--------------------Vans.jsx------------------------------------
+
 
 //##########################################################################
 
-// 23.
+// 23. Import the three things you need to change routes to support the newer one 
+// that supports API layers and laoders. 
+// Refactor routes to use these new imports.
 
 //##########################################################################
 
