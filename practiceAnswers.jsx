@@ -591,7 +591,15 @@ import { NavLink, useParams } from "react-router-dom";
 //     )
 // }
 
-
+//NOTE: .ok is built into fetch. 
+// ALSO: 'try' is used inside an async function bc you don't know for sure if 
+// it is going to work correctly, so the 'try' block tells it what to do if 
+// everything works-- the happy path. 
+// The 'catch' block determines what to do in the event of an error-- the sad path. 
+// We create some error state and set it to true in the catch block. 
+// The 'finally' block will run regardless of if the 'try' or the 'catch' 
+// blocks ran, and this just sets the loading state back to false. 
+// NOICE: that we also have an early return int he event of a fecth error. 
 
 //##########################################################################
 
