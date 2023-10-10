@@ -3,6 +3,9 @@ import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { getArt } from '../../api'
 
+export function loader(){ 
+    return "Loader goes here"
+}
 
 export default function Vans(){
     
@@ -25,7 +28,6 @@ export default function Vans(){
     }
 
     
-
     // React.useEffect(() => { 
     //     fetch(`https://api.artic.edu/api/v1/artworks?page=${page}`)
     //         .then(res => res.json())

@@ -164,7 +164,46 @@ import VanDetail from "./pages/Vans/VanDetail";
 
 //##########################################################################
 
-// 24. 
+// 24. Create a loader function in HomePage.jsx
+//     Implement the loader in index.jsx.
+
+//--------------------HomePage.jsx------------------------------------
+
+import React from 'react'
+
+export function loader() { 
+
+}
+
+export default function HomePage() { 
+    return ( 
+        <></>
+    )
+} 
+
+
+//NOTE: the name of the function doesn't matter in React (but it does in
+// other libraries like Remix).
+// The job of the loader is simply to get the data we want. It doesn't have to 
+// be a fetch request, but it usually always is. 
+
+//--------------------index.jsx------------------------------------
+
+//*IMPORTS GO HERE*
+
+import HomePage, { loader as HomePageLoader } from "./Home"
+
+const router = createBrowserRouter(createRoutesFromElements(
+    <Route path="/" element={<HomePage />} loader={HomePageLoader} />
+  ))
+
+  function App() {
+    return (
+      <RouterProvider router={router} />
+    )
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />)
 
 //##########################################################################
 

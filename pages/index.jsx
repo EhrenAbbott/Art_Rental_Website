@@ -12,7 +12,7 @@ import {
 import '/index.css'
 import Home from './Home.jsx'
 import About from './About.jsx'
-import Vans from './Vans/Vans.jsx'
+import Vans, { loader as vansLoader } from './Vans/Vans.jsx'
 import VanDetail from './Vans/VanDetail.jsx'
 import Layout from '../components/Layout'
 import Income from "/pages/Host/Income.jsx"
@@ -30,7 +30,7 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route element={<Layout />}> 
     <Route path="/" element={<Home />}/>
     <Route path="about" element={<About />}/>
-    <Route path='vans' element={<Vans />} />
+    <Route path='vans' element={<Vans />} loader={vansLoader}/>
     <Route path='vans/:id' element={<VanDetail/> }/>
     <Route path='dashboard' element={<HostLayout />}>
       <Route index element={<Dashboard />} />
