@@ -686,10 +686,25 @@ import { NavLink, useParams } from "react-router-dom";
 
 //   ReactDOM.createRoot(document.getElementById("root")).render(<App />)
 
-
 //##########################################################################
 
-// 25.
+// 25. In index.jsx create an error handler for the route that uses the loader funciton. 
+
+//--------------------index.jsx------------------------------------
+
+
+// const router = createBrowserRouter(createRoutesFromElements(
+//     <Route
+//       path="/"
+//       element={<HomePage />}
+//       errorElement={<h1>There was an error!</h1>}
+//       loader={homePageLoader}
+//     />
+//   ))
+  
+  //NOTE: this will handle more than just an error happening inside the loader; 
+  // it will address ANY errors happening inside the component
+  
 
 //##########################################################################
 
@@ -706,9 +721,5 @@ import { NavLink, useParams } from "react-router-dom";
 //##########################################################################
 
 // 29.
-
-//##########################################################################
-
-// 30.
 
 //##########################################################################

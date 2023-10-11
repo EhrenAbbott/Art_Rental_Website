@@ -178,26 +178,26 @@ import VanDetail from "./pages/Vans/VanDetail";
 
 //##########################################################################
 
-// 25. 
-
-//##########################################################################
-
-// 26. In index.jsx create an error handler for the route that uses the loader funciton. 
+// 25. In index.jsx create an error handler for the route that uses the loader funciton. 
 
 //--------------------index.jsx------------------------------------
 
+//##########################################################################
 
-const router = createBrowserRouter(createRoutesFromElements(
-  <Route
-    path="/"
-    element={<HomePage />}
-    errorElement={<h1>There was an error!</h1>}
-    loader={homePageLoader}
-  />
-))
+// 26. Import the correct hook to print the error that we threw 
+// in api.jsx. 
 
-//NOTE: this will handle more than just an error happening inside the loader; 
-// it will address ANY errors happening inside the component
+import { useRouteError } from "react-router-dom";
+
+export default function Error(){ 
+    const error = useRouteError()
+    console.log(error)
+
+    return ( 
+        <></>
+    )
+}
+
 
 
 //##########################################################################
@@ -211,9 +211,5 @@ const router = createBrowserRouter(createRoutesFromElements(
 //##########################################################################
 
 // 29.
-
-//##########################################################################
-
-// 30.
 
 //##########################################################################
