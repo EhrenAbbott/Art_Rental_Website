@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams, useLoaderData } from 'react-router-dom'
 import { getArt } from '../../api'
 
 export function loader(){ 
-    return "Loader goes here"
+    return getArt()
 }
 
 export default function Vans(){
@@ -14,6 +14,8 @@ export default function Vans(){
     const [searchParams, setSearchParams] = useSearchParams()
     const [loading, setLoading] = React. useState(false)
     const [error, setError] = React.useState(null)
+    const data = useLoaderData()
+    console.log(data)
 
     const typeFilter = searchParams.get("place_of_origin")
     // console.log(`typeFilter: ${typeFilter}`)

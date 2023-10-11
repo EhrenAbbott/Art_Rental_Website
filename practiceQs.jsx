@@ -166,16 +166,20 @@ import VanDetail from "./pages/Vans/VanDetail";
 
 // 24. Create a loader function in HomePage.jsx
 //     Implement the loader in index.jsx.
+//      Import useLoaderData in the correct file and imlement it correctly. 
 
 //--------------------HomePage.jsx------------------------------------
 
 import React from 'react'
+import { useLoaderData } from 'react-router-dom'
 
 export function loader() { 
 
 }
 
 export default function HomePage() { 
+    const data = useLoaderData()
+
     return ( 
         <></>
     )
@@ -186,7 +190,11 @@ export default function HomePage() {
 // other libraries like Remix).
 // The job of the loader is simply to get the data we want. It doesn't have to 
 // be a fetch request, but it usually always is. 
-
+//ALSO: whatever we are returning in our loader is what will come back when we call 
+// useLoaderData. 
+// AND: This set up is different than useEffect becuase we are not fetching the data 
+// inside the code of our component, React can delay the rendering of our component until 
+// the loader has finished its task.  
 //--------------------index.jsx------------------------------------
 
 //*IMPORTS GO HERE*
