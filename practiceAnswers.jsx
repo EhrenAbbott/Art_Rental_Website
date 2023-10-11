@@ -633,7 +633,59 @@ import { NavLink, useParams } from "react-router-dom";
 
 //##########################################################################
 
-// 24.
+// 24. Create a loader function in HomePage.jsx
+//     Implement the loader in index.jsx.
+//      Import useLoaderData in the correct file and imlement it correctly. 
+//      With this new setup, eliminatr use of Vans state without getting rid of 
+//      any functionality.
+
+//--------------------HomePage.jsx------------------------------------
+
+// import React from 'react'
+// import { useLoaderData } from 'react-router-dom'
+// import { getVans } from './api.js'
+
+
+// export function loader() { 
+//     return getVans()
+// }
+
+// export default function HomePage() { 
+//     const vans = useLoaderData()
+
+//     return ( 
+//         <></>
+//     )
+// } 
+
+
+//NOTE: the name of the function doesn't matter in React (but it does in
+// other libraries like Remix).
+// The job of the loader is simply to get the data we want. It doesn't have to 
+// be a fetch request, but it usually always is. 
+//ALSO: whatever we are returning in our loader is what will come back when we call 
+// useLoaderData. 
+// AND: This set up is different than useEffect becuase we are not fetching the data 
+// inside the code of our component, React can delay the rendering of our component until 
+// the loader has finished its task.  
+//--------------------index.jsx------------------------------------
+
+//*IMPORTS GO HERE*
+
+// import HomePage, { loader as HomePageLoader } from "./Home"
+
+// const router = createBrowserRouter(createRoutesFromElements(
+//     <Route path="/" element={<HomePage />} loader={HomePageLoader} />
+//   ))
+
+//   function App() {
+//     return (
+//       <RouterProvider router={router} />
+//     )
+//   }
+
+//   ReactDOM.createRoot(document.getElementById("root")).render(<App />)
+
 
 //##########################################################################
 

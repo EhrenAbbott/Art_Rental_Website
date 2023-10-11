@@ -25,12 +25,13 @@ import YourArtInfo from './Host/YourArtInfo.jsx'
 import YourArtPhotos from './Host/YourArtPhotos.jsx'
 import YourArtPricing from './Host/YourArtPricing.jsx'
 import NotFound from './NotFound.jsx'
+import Error from '../components/Error.jsx'
 
 const router = createBrowserRouter(createRoutesFromElements( 
   <Route element={<Layout />}> 
     <Route path="/" element={<Home />}/>
     <Route path="about" element={<About />}/>
-    <Route path='vans' element={<Vans />} loader={vansLoader}/>
+    <Route path='vans' element={<Vans />} loader={vansLoader} errorElement={<Error/>}/>
     <Route path='vans/:id' element={<VanDetail/> }/>
     <Route path='dashboard' element={<HostLayout />}>
       <Route index element={<Dashboard />} />

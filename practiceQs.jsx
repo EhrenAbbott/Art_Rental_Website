@@ -172,56 +172,33 @@ import VanDetail from "./pages/Vans/VanDetail";
 
 //--------------------HomePage.jsx------------------------------------
 
-import React from 'react'
-import { useLoaderData } from 'react-router-dom'
-
-export function loader() { 
-
-}
-
-export default function HomePage() { 
-    const vans = useLoaderData()
-
-    return ( 
-        <></>
-    )
-} 
-
-
-//NOTE: the name of the function doesn't matter in React (but it does in
-// other libraries like Remix).
-// The job of the loader is simply to get the data we want. It doesn't have to 
-// be a fetch request, but it usually always is. 
-//ALSO: whatever we are returning in our loader is what will come back when we call 
-// useLoaderData. 
-// AND: This set up is different than useEffect becuase we are not fetching the data 
-// inside the code of our component, React can delay the rendering of our component until 
-// the loader has finished its task.  
+ 
 //--------------------index.jsx------------------------------------
 
-//*IMPORTS GO HERE*
 
-import HomePage, { loader as HomePageLoader } from "./Home"
+//##########################################################################
+
+// 25. 
+
+//##########################################################################
+
+// 26. In index.jsx create an error handler for the route that uses the loader funciton. 
+
+//--------------------index.jsx------------------------------------
+
 
 const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/" element={<HomePage />} loader={HomePageLoader} />
-  ))
+  <Route
+    path="/"
+    element={<HomePage />}
+    errorElement={<h1>There was an error!</h1>}
+    loader={homePageLoader}
+  />
+))
 
-  function App() {
-    return (
-      <RouterProvider router={router} />
-    )
-  }
+//NOTE: this will handle more than just an error happening inside the loader; 
+// it will address ANY errors happening inside the component
 
-  ReactDOM.createRoot(document.getElementById("root")).render(<App />)
-
-//##########################################################################
-
-// 25.
-
-//##########################################################################
-
-// 26.
 
 //##########################################################################
 
