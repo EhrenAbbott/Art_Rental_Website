@@ -33,6 +33,13 @@ export default function Header(){
                 >
                     Artwork
                 </NavLink>
+                
+                <Link to="login" className="login-link">
+                    <img 
+                        src="../assets/images/avatar-icon.png" 
+                        className="login-icon"
+                    />
+                </Link>
 
             </nav> 
         </div>
