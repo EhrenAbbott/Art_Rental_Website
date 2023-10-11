@@ -708,7 +708,22 @@ import { NavLink, useParams } from "react-router-dom";
 
 //##########################################################################
 
-// 26.
+// 26. Import the correct hook to print the error that we threw 
+// in api.jsx. 
+
+// import { useRouteError } from "react-router-dom";
+
+// export default function Error(){ 
+//     const error = useRouteError()
+//     console.log(error)
+
+//     return ( 
+//         <>{error.status}</>
+//     )
+// }
+
+//NOTE: here 'error' is actually the object that we created in api.jsx 
+// that has several different properties.
 
 //##########################################################################
 

@@ -187,18 +187,23 @@ import VanDetail from "./pages/Vans/VanDetail";
 // 26. Import the correct hook to print the error that we threw 
 // in api.jsx. 
 
-import { useRouteError } from "react-router-dom";
+// import { useRouteError } from "react-router-dom";
 
-export default function Error(){ 
-    const error = useRouteError()
-    console.log(error)
+// export default function Error(){ 
+//     const error = useRouteError()
+//     console.log(error)
 
-    return ( 
-        <></>
-    )
-}
+//     return ( 
+//         <>{error.status}</>
+//     )
+// }
 
-
+//NOTE: here 'error' is actually the object that we created in api.jsx 
+// that has several different properties.
+//ALSO; if you put an errorElement in the parent route to all other routes, it
+// will catch any errors in the child components. In this project, if we did 
+// it this way the page woudl not display anything, even the nav bar, so you 
+// need to be strategic about which level to use it on.
 
 //##########################################################################
 
