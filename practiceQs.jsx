@@ -167,6 +167,8 @@ import VanDetail from "./pages/Vans/VanDetail";
 // 24. Create a loader function in HomePage.jsx
 //     Implement the loader in index.jsx.
 //      Import useLoaderData in the correct file and imlement it correctly. 
+//      With this new setup, eliminatr use of Vans state without getting rid of 
+//      any functionality.
 
 //--------------------HomePage.jsx------------------------------------
 
@@ -178,7 +180,7 @@ export function loader() {
 }
 
 export default function HomePage() { 
-    const data = useLoaderData()
+    const vans = useLoaderData()
 
     return ( 
         <></>

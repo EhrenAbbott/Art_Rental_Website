@@ -1,33 +1,38 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link, useSearchParams, useLoaderData } from 'react-router-dom'
+import { Link, useSearchParams, useLoaderData, useRevalidator } from 'react-router-dom'
 import { getArt } from '../../api'
+
 
 export function loader(){ 
     return getArt()
 }
 
+
+
 export default function Vans(){
     
-    const [art, setArt] = React.useState([])
-    const [page, setPage] = React.useState(1)
+    // const [art, setArt] = React.useState([])
+    // const [page, setPage] = useState(1)
     const [searchParams, setSearchParams] = useSearchParams()
-    const [loading, setLoading] = React. useState(false)
+    // const [loading, setLoading] = React. useState(false)
     const [error, setError] = React.useState(null)
-    const data = useLoaderData()
-    console.log(data)
+    const art = useLoaderData()
+    console.log(art)
+
+
 
     const typeFilter = searchParams.get("place_of_origin")
     // console.log(`typeFilter: ${typeFilter}`)
 
 
-    function loadMore(){ 
-        setPage(prevPage => prevPage + 1)
-    }
+    // async function loadMore(){
+    //     setPage(prevPage => prevPage + 1)
+    // }
 
-    function loadFewer(){ 
-        setPage(prevPage => prevPage - 1)
-    }
+    // function loadFewer(){ 
+    //     setPage(prevPage => prevPage - 1)
+    // }
 
     
     // React.useEffect(() => { 
@@ -38,24 +43,23 @@ export default function Vans(){
 
     //TODO create API functions and to use in useEffect for other components fetching data
 
-    React.useEffect(() => { 
-        async function loadArt() { 
-            setLoading(true)
-            try { 
-                const data = await getArt(page)
-                setArt(data.data)
-            } catch(err) { 
-                console.log(err)
-                setError(err)
-            } finally { 
-                setLoading(false)
-            }
-        }
+    // React.useEffect(() => { 
+    //     async function loadArt() { 
+    //         setLoading(true)
+    //         try { 
+    //             const data = await getArt(page)
+    //             setArt(data.data)
+    //         } catch(err) { 
+    //             console.log(err)
+    //             setError(err)
+    //         } finally { 
+    //             setLoading(false)
+    //         }
+    //     }
 
-        loadArt()
-    }, [page])
+    //     loadArt()
+    // }, [page])
 
-    console.log(art)
 
     const filteredArt = typeFilter 
         ? art.filter(item => item.place_of_origin === typeFilter)
@@ -91,14 +95,15 @@ export default function Vans(){
             }
             return prevParams
         })
-    } 
+    }  
+    
 
     //TODO implement loading state for other components using fetch requests
     //TODO implement error state and error handlign for other components using fetch requests. 
 
-    if (loading) { 
-        return <h1>Loading...</h1>
-    }
+    // if (loading) { 
+    //     return <h1>Loading...</h1>
+    // }
 
     if (error) { 
         return <h1>There was an error: {error.message}</h1>
@@ -159,10 +164,10 @@ export default function Vans(){
             <div className='van-list'>
                 {mappedArt}
             </div> 
-            <div className='page-btn-div'>
+            {/* <div className='page-btn-div'>
                 { page > 1 && <button className='page-btn' onClick={loadFewer}>Prev page</button>}
-                <button className='page-btn' onClick={loadMore}>Next page</button>
-            </div>
+                <button className='page-btn' onClick={(loadMore)}>Next page</button>
+            </div> */}
         </div>
     )
 }

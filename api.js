@@ -10,5 +10,5 @@ export async function getArt(page){
         }
     }
     const data = await res.json()
-    return data 
+    return data.data 
 }
