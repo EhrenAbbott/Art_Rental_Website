@@ -36,14 +36,64 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="login" element={<Login/>}/>
     <Route path='vans/:id' element={<VanDetail/> }/>
     <Route path='dashboard' element={<HostLayout />}>
-      <Route index element={<Dashboard />} />
-      <Route path='income' element={<Income />}/>
-      <Route path='reviews' element={<Reviews />}/>
-      <Route path="yourartwork" element={<YourArtwork />}/>
-      <Route path="yourartwork/:id" element={<YourArtDetail />}>
-        <Route index element={<YourArtInfo />} />
-        <Route path="photos" element={<YourArtPhotos />} />
-        <Route path="pricing" index element={<YourArtPricing />} />
+      <Route 
+        index 
+        element={<Dashboard />}
+        loader={async () => {
+          return null
+        }}  
+      />
+      <Route 
+        path='income' 
+        element={<Income />}
+        loader={async () => {
+          return null
+        }} 
+      />
+      <Route 
+        path='reviews' 
+        element={<Reviews />}
+        loader={async () => {
+          return null
+        }} 
+      />
+      <Route 
+        path="yourartwork" 
+        element={<YourArtwork />}
+        loader={async () => {
+          return null
+        }} 
+      />
+      <Route 
+        path="yourartwork/:id" 
+        element={<YourArtDetail />}
+        loader={async () => {
+          return null
+        }} 
+      >
+        <Route 
+          index 
+          element={<YourArtInfo />}
+          loader={async () => {
+            return null
+          }} 
+        />
+        <Route 
+          path="photos" 
+          element={<YourArtPhotos />}
+          loader={async () => {
+            return null
+          }} 
+        />
+        <Route 
+          path="pricing" 
+          index 
+          element={<YourArtPricing />}
+          loader={async () => {
+            return null
+          }} 
+        />
+
       </Route>
     </Route>
     <Route path="*" element={<NotFound />} />

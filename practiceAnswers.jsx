@@ -724,10 +724,41 @@ import { NavLink, useParams } from "react-router-dom";
 
 //NOTE: here 'error' is actually the object that we created in api.jsx 
 // that has several different properties.
+//ALSO; if you put an errorElement in the parent route to all other routes, it
+// will catch any errors in the child components. In this project, if we did 
+// it this way the page woudl not display anything, even the nav bar, so you 
+// need to be strategic about which level to use it on.
+// IMPORTANT!: you have to add a loader to every one of your protected routes in order to protect
+// all of your routes. This is neccesary bc they always run in parallel. This is also a potential
+// downside to this approach.
+// AND: the loaders don't ave to be async to work properly, but for our purposes we 
+// should make them async.
 
 //##########################################################################
 
-// 27.
+// 27. If the user is not logged in, send them to a different page. 
+
+//--------------------index.jsx------------------------------------
+
+// import { redirect } from "react-router-dom";
+
+// <Route 
+//     path="protected" 
+//     element={<ElemName />}
+//     loader={ async () => { 
+//         const isLoggedIn = false 
+//         if (!isLoggedIn) { 
+//             throw redirect("/login")
+//         } 
+//         return null
+//     }}
+//     />
+
+
+
+//NOTE: using 'throw' for redirect is convention, but it would 
+// still work if you used return. 
+// ALSO: there has to be something returned for the async function, for this to work, so we can just set it to null.
 
 //##########################################################################
 
