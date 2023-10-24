@@ -1,5 +1,11 @@
 import React from 'react'
 import { useParams, Link, useLocation } from "react-router-dom"
+import { getArt } from '../../api'
+
+export function loader({ params }) { 
+    console.log(params.id)
+    return getArt()
+}
 
 export default function VanDetail() { 
 

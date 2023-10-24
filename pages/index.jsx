@@ -13,7 +13,7 @@ import '/index.css'
 import Home from './Home.jsx'
 import About from './About.jsx'
 import Vans, { loader as vansLoader } from './Vans/Vans.jsx'
-import VanDetail from './Vans/VanDetail.jsx'
+import VanDetail, {loader as vanDetailLoader} from './Vans/VanDetail.jsx'
 import Layout from '../components/Layout'
 import Income from "/pages/Host/Income.jsx"
 import Reviews from "/pages/Host/Reviews.jsx"
@@ -32,10 +32,23 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route element={<Layout />}> 
     <Route path="/" element={<Home />}/>
     <Route path="about" element={<About />}/>
-    <Route path='vans' element={<Vans />} loader={vansLoader} errorElement={<Error/>}/>
-    <Route path="login" element={<Login/>}/>
-    <Route path='vans/:id' element={<VanDetail/> }/>
+    <Route 
+      path="login" 
+      element={<Login/>}
+    />
+    <Route 
+      path='vans' 
+      element={<Vans />} 
+      loader={vansLoader} 
+      errorElement={<Error/>}
+    />
+    <Route 
+      path='vans/:id' 
+      element={<VanDetail/>} 
+      loader={vanDetailLoader}
+    />
     <Route path='dashboard' element={<HostLayout />}>
+
       <Route 
         index 
         element={<Dashboard />}
