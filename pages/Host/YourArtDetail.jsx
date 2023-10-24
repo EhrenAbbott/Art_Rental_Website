@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, NavLink, Link, Outlet, useOutletContext } from "react-router-dom";
+import { getYourArtDetail } from "../../api";
 
 export default function YourArtDetail(){ 
 
