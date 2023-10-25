@@ -1,29 +1,28 @@
 import React from 'react'
-import { useParams, Link, useLocation } from "react-router-dom"
-import { getArt } from '../../api'
+import { useParams, Link, useLocation, useLoaderData } from "react-router-dom"
+import { getArtDetail } from '../../api'
+
 
 export function loader({ params }) { 
-    console.log(params.id)
-    return getArt()
+    return getArtDetail(params.id)
 }
 
 export default function VanDetail() { 
 
-    const params = useParams()
+ 
     const location = useLocation();
     const search = location.state?.search || ""
-    // console.log(location)
-    const [art, setArt] = React.useState(null)
+    const art = useLoaderData()
+    // const [art, setArt] = React.useState(null)
 
 
-    React.useEffect(() => { 
-        fetch(`https://api.artic.edu/api/v1/artworks/${params.id}`)
-            .then(res => res.json())
-            .then(data => setArt(data.data))
-    }, [params.id])
+    // React.useEffect(() => { 
+    //     fetch(`https://api.artic.edu/api/v1/artworks/${params.id}`)
+    //         .then(res => res.json())
+    //         .then(data => setArt(data.data))
+    // }, [params.id])
 
 
-    console.log(location.state.type)
 
     const backButtonText = location.state.type === "United States" ? "the United States" : location.state.type
 
@@ -32,7 +31,6 @@ export default function VanDetail() {
 
     return (
         <div className="van-detail-container">
-            {art ? (
                 <div className="van-detail">
                     <Link
                         to={`..${search}`}
@@ -53,7 +51,6 @@ export default function VanDetail() {
                     <p>{art.medium_display}</p>
                     <button className="link-button">Rent this piece of art</button>
                 </div>
-            ) : <h2>Loading...</h2>}
         </div>
     )
 }
