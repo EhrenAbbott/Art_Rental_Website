@@ -5,6 +5,7 @@ import { getArt } from '../../api'
 
 
 export function loader(){ 
+    console.log(`getArt via loader: ${getArt()}`)
     return getArt()
 }
 
@@ -17,53 +18,21 @@ export default function Vans(){
     const [searchParams, setSearchParams] = useSearchParams()
     // const [loading, setLoading] = React. useState(false)
     const [error, setError] = React.useState(null)
+    
     const art = useLoaderData()
+    console.log("useLoaderData (below):")
     console.log(art)
 
 
-
     const typeFilter = searchParams.get("place_of_origin")
-    // console.log(`typeFilter: ${typeFilter}`)
-
-
-    // async function loadMore(){
-    //     setPage(prevPage => prevPage + 1)
-    // }
-
-    // function loadFewer(){ 
-    //     setPage(prevPage => prevPage - 1)
-    // }
-
-    
-    // React.useEffect(() => { 
-    //     fetch(`https://api.artic.edu/api/v1/artworks?page=${page}`)
-    //         .then(res => res.json())
-    //         .then(data => setArt(data.data))
-    // }, [page]) 
+    console.log(`typeFilter: ${typeFilter}`)
 
     //TODO create API functions and to use in useEffect for other components fetching data
 
-    // React.useEffect(() => { 
-    //     async function loadArt() { 
-    //         setLoading(true)
-    //         try { 
-    //             const data = await getArt(page)
-    //             setArt(data.data)
-    //         } catch(err) { 
-    //             console.log(err)
-    //             setError(err)
-    //         } finally { 
-    //             setLoading(false)
-    //         }
-    //     }
-
-    //     loadArt()
-    // }, [page])
-
-
     const filteredArt = typeFilter 
         ? art.filter(item => item.place_of_origin === typeFilter)
-        : art 
+        : art  
+    
     
 
     const mappedArt = filteredArt.map(data => data.image_id && ( 

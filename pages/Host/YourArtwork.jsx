@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 
 export default function YourArtwork(){ 
 
@@ -8,7 +7,7 @@ export default function YourArtwork(){
         { 
             id: "345",
             art_id: [
-                        "219460",
+                    
                         "1587",
                         "219455",
                         "73874",
@@ -23,28 +22,29 @@ export default function YourArtwork(){
 
     const [users, setUsers] = React.useState(userList)
     const [userArtData, setUserArtData] = React.useState([])
-
     const currentUser = users[0]
-
     const userArtList = currentUser.art_id
+    const art = useLoaderData(userArtList)
+    console.log(art)
 
-    //TODO: The above user data is temporarily hard coded until user login/authentication can be added
 
-
-    // console.log(userArtList)
-
-    const mappedArray = userArtList.map(id => {
-        React.useEffect(() => { 
-            fetch(`https://api.artic.edu/api/v1/artworks/${id}`)
-                .then(res => res.json())
-                .then(data => setUserArtData((prevData) => [ 
+    
+    userArtList.map(item => 
+    React.useEffect(() => { 
+        fetch(`https://api.artic.edu/api/v1/artworks/${item}`)
+            .then(res => res.json())
+            .then(data => setUserArtData( prevData =>  
+                [ 
                     ...prevData, 
                     data.data
-                ]))
-        }, [users])
-    })
+                ]
+            ))
+    }, [])
+    )
 
-    console.log(userArtData) 
+    console.log(userArtData)
+
+    //TODO: The above user data is temporarily hard coded until user login/authentication can be added
 
     const mappedUserArt = userArtData.map(artwork => ( 
         <Link

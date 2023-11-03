@@ -13,15 +13,8 @@ export default function VanDetail() {
     const location = useLocation();
     const search = location.state?.search || ""
     const art = useLoaderData()
-    // const [art, setArt] = React.useState(null)
-
-
-    // React.useEffect(() => { 
-    //     fetch(`https://api.artic.edu/api/v1/artworks/${params.id}`)
-    //         .then(res => res.json())
-    //         .then(data => setArt(data.data))
-    // }, [params.id])
-
+    console.log("useLoaderData (below):")
+    console.log(art)
 
 
     const backButtonText = location.state.type === "United States" ? "the United States" : location.state.type

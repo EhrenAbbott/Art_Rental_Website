@@ -73,9 +73,6 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route 
         path="yourartwork" 
         element={<YourArtwork />}
-        loader={async () => {
-          return null
-        }} 
       />
       <Route 
         path="yourartwork/:id" 
