@@ -1,11 +1,17 @@
 import React from "react";
-import { useParams, NavLink, Link, Outlet, useOutletContext } from "react-router-dom";
+import { useParams, NavLink, Link, Outlet, useOutletContext, useLoaderData } from "react-router-dom";
+import { getArtDetail } from "../../api";
 
+
+export function loader({ params }) { 
+    return getArtDetail(params.id)
+}
 
 export default function YourArtDetail(){ 
 
-    const [artDetail, setArtDetail] = React.useState([])
+    // const [artDetail, setArtDetail] = React.useState([])
     const { id } = useParams()
+    const artDetail = useLoaderData()
 
     const activeStyles = {
         fontWeight: "bold",
@@ -13,11 +19,11 @@ export default function YourArtDetail(){
         color: "#161616"
     }
 
-    React.useEffect(() => { 
-        fetch(`https://api.artic.edu/api/v1/artworks/${id}`)
-            .then(res => res.json())
-            .then(data => setArtDetail(data.data))
-    }, [])
+    // React.useEffect(() => { 
+    //     fetch(`https://api.artic.edu/api/v1/artworks/${id}`)
+    //         .then(res => res.json())
+    //         .then(data => setArtDetail(data.data))
+    // }, [])
 
     console.log(artDetail)
 

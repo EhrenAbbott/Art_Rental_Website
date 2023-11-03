@@ -20,7 +20,7 @@ import Reviews from "/pages/Host/Reviews.jsx"
 import Dashboard from "/pages/Host/Dashboard.jsx"
 import HostLayout from '../components/HostLayout.jsx'
 import YourArtwork from './Host/YourArtwork.jsx'
-import YourArtDetail from './Host/YourArtDetail.jsx'
+import YourArtDetail, { loader as yourArtDetailLoader } from './Host/YourArtDetail.jsx'
 import YourArtInfo from './Host/YourArtInfo.jsx'
 import YourArtPhotos from './Host/YourArtPhotos.jsx'
 import YourArtPricing from './Host/YourArtPricing.jsx'
@@ -77,9 +77,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route 
         path="yourartwork/:id" 
         element={<YourArtDetail />}
-        loader={async () => {
-          return null
-        }} 
+        loader={yourArtDetailLoader}
       >
         <Route 
           index 
