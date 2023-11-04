@@ -4,8 +4,7 @@ import { Link, useSearchParams, useLoaderData, useRevalidator } from 'react-rout
 import { getArt } from '../../api'
 
 
-export function loader(){ 
-    console.log(`getArt via loader: ${getArt()}`)
+export function loader(){
     return getArt()
 }
 

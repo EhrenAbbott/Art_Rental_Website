@@ -1,9 +1,10 @@
 import React from "react";
 import { useParams, NavLink, Link, Outlet, useOutletContext, useLoaderData } from "react-router-dom";
 import { getArtDetail } from "../../api";
+import { requireAuth } from "../../utils";
 
-
-export function loader({ params }) { 
+export async function loader({ params }) { 
+    await requireAuth()
     return getArtDetail(params.id)
 }
 
