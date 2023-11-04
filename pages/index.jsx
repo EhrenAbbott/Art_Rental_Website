@@ -53,24 +53,34 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route 
         index 
         element={<Dashboard />}
-        loader={async () =>  await requireAuth()}  
+        loader={async () => { 
+          await requireAuth()
+          return null
+        }}
       />
       <Route 
         path='income' 
         element={<Income />}
-        loader={async () =>  await requireAuth()}  
-
+        loader={async () => { 
+          await requireAuth()
+          return null
+        }}
       />
       <Route 
         path='reviews' 
         element={<Reviews />}
-        loader={async () =>  await requireAuth()}  
-
+        loader={async () => { 
+          await requireAuth()
+          return null
+        }}
       />
       <Route 
         path="yourartwork" 
         element={<YourArtwork />}
-        loader={async () =>  await requireAuth()}  
+        loader={async () => { 
+          await requireAuth()
+          return null
+        }}  
       />
       <Route 
         path="yourartwork/:id" 
@@ -80,21 +90,27 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route 
           index 
           element={<YourArtInfo />}
-          loader={async () =>  await requireAuth()}  
-
+          loader={async () => { 
+            await requireAuth()
+            return null
+          }}
         />
         <Route 
           path="photos" 
           element={<YourArtPhotos />}
-          loader={async () =>  await requireAuth()}  
-
+          loader={async () => { 
+            await requireAuth()
+            return null
+          }}
         />
         <Route 
           path="pricing" 
           index 
           element={<YourArtPricing />}
-          loader={async () =>  await requireAuth()}  
-
+          loader={async () => { 
+            await requireAuth()
+            return null
+          }}
         />
 
       </Route>
