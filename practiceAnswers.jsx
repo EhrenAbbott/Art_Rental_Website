@@ -762,7 +762,52 @@ import { NavLink, useParams } from "react-router-dom";
 
 //##########################################################################
 
-// 28.
+// 28. Write a function in its own file called authRequired that checks to see if 
+// the user is logged in and, if not, rerouted them to the login page (The
+// user's status may be harcoded)
+//      Modify the loader functions to use this new function (if the page has its own custom loader) 
+//      Update the loaders in the routes, if needed, to use requireAuth()
+//      HINT: -->                                                                                                           requireAuth needs to be async, and the you must use the awaut keyword. 
+
+//--------------------utils.jsx------------------------------------
+
+// import { redirect } from "react-router-dom"
+
+// export async function requireAuth() {
+//     const isLoggedIn = false
+    
+//     if (!isLoggedIn) {
+//         throw redirect("/login")
+//     }
+// }
+
+//--------------------YourArtDetail.jsx------------------------------------
+
+// import { requireAuth } from "../../utils";
+// import { getArtDetail } from "../../api";
+
+
+// export async function loader({ params }) { 
+//     await requireAuth()
+//     return getArtDetail(params.id)
+// }
+
+//--------------------index.jsx------------------------------------
+
+// //Custom loader:
+// <Route 
+//         path="yourartwork/:id" 
+//         element={<YourArtDetail />}
+//         loader={yourArtDetailLoader}
+//       ></Route>
+
+// //Generic loader:
+// <Route 
+//           index 
+//           element={<YourArtInfo />}
+//           loader={async () =>  await requireAuth()}  
+
+//         />
 
 //##########################################################################
 

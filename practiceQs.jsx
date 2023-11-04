@@ -195,7 +195,24 @@ import VanDetail from "./pages/Vans/VanDetail";
 
 //##########################################################################
 
-// 28.
+// 28. Write a function in its own file called authRequired that checks to see if 
+// the user is logged in and, if not, rerouted them to the login page (The
+// user's status may be harcoded)
+//      Modify the loader functions to use this new function (if the page has its own custom loader) 
+//      Update the loaders in the routes, if needed, to use requireAuth()
+//      HINT: -->                                                                                                           requireAuth needs to be async, and the you must use the awaut keyword. 
+
+//--------------------utils.jsx------------------------------------
+
+
+//--------------------YourArtDetail.jsx------------------------------------
+
+
+//--------------------index.jsx------------------------------------
+
+// //Custom loader:
+
+// //Generic loader:
 
 //##########################################################################
 
