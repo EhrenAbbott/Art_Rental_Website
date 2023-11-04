@@ -9,7 +9,6 @@ export function loader({ params }) {
 
 export default function YourArtDetail(){ 
 
-    // const [artDetail, setArtDetail] = React.useState([])
     const { id } = useParams()
     const artDetail = useLoaderData()
 
@@ -18,12 +17,6 @@ export default function YourArtDetail(){
         textDecoration: "underline",
         color: "#161616"
     }
-
-    // React.useEffect(() => { 
-    //     fetch(`https://api.artic.edu/api/v1/artworks/${id}`)
-    //         .then(res => res.json())
-    //         .then(data => setArtDetail(data.data))
-    // }, [])
 
     console.log(artDetail)
 
