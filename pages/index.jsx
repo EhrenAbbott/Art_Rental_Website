@@ -26,7 +26,7 @@ import YourArtPhotos from './Host/YourArtPhotos.jsx'
 import YourArtPricing from './Host/YourArtPricing.jsx'
 import NotFound from './NotFound.jsx'
 import Error from '../components/Error.jsx'
-import Login from './Login.jsx'
+import Login, { loader as loginLoader } from './Login.jsx'
 import { requireAuth } from '../utils.js'
 
 const router = createBrowserRouter(createRoutesFromElements( 
@@ -36,6 +36,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route 
       path="login" 
       element={<Login/>}
+      loader={loginLoader}
     />
     <Route 
       path='vans' 
