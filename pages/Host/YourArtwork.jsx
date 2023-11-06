@@ -12,7 +12,10 @@ export default function YourArtwork(){
                         "219455",
                         "73874",
                         "257286",
-                    ] 
+                    ], 
+            name: "Bob", 
+            email: "bob@gmail.com", 
+            password: "bob123", 
         },
         { 
             id: "576",
@@ -43,8 +46,6 @@ export default function YourArtwork(){
     )
 
     console.log(userArtData)
-
-    //TODO: The above user data is temporarily hard coded until user login/authentication can be added
 
     const mappedUserArt = userArtData.map(artwork => ( 
         <Link
