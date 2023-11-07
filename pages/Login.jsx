@@ -1,6 +1,7 @@
-import React from "react"
-import { useLoaderData } from "react-router-dom"
-
+import React from "react";
+import { useLoaderData } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { AiFillFacebook } from "react-icons/ai"
 
 export function loader({ request }) { 
     return new URL(request.url).searchParams.get("message")
@@ -45,6 +46,9 @@ export default function Login() {
                     value={loginFormData.password}
                 />
                 <button>Log in</button>
+                <h2 className="or-text">-OR-</h2>
+                <button><FcGoogle className="google-logo"/>Sign in with Google </button>
+                <button><AiFillFacebook className="fb-logo"/> Sign in with Facebook </button>
             </form>
         </div>
     )
