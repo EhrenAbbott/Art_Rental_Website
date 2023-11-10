@@ -2,6 +2,8 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai"
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { auth } from "../firebase";
 
 export function loader({ request }) { 
     return new URL(request.url).searchParams.get("message")
@@ -12,6 +14,17 @@ export default function Login() {
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
     const message = useLoaderData()
 
+    // const googleProvider = new GoogleAuthProvider();
+    
+    // const GoogleLogin = async () => { 
+    //     try { 
+    //         const result = await signInWithPopup(auth, googleProvider)
+    //         console.log("user result:")
+    //         console.log(user.result)
+    //     } catch (error) { 
+
+    //     }
+    // }
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -47,7 +60,7 @@ export default function Login() {
                 />
                 <button>Log in</button>
                 <h2 className="or-text">-OR-</h2>
-                <button><FcGoogle className="google-logo"/>Sign in with Google </button>
+                <button onClick={GoogleLogin}><FcGoogle className="google-logo"/>Sign in with Google </button>
                 <button><AiFillFacebook className="fb-logo"/> Sign in with Facebook </button>
             </form>
         </div>
