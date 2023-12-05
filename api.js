@@ -26,3 +26,21 @@ export async function getArtDetail(params){
     // console.log(data.data)
     return data.data 
 }
+
+
+// export async function loginUser(creds) {
+//     const res = await fetch("/api/login",
+//         { method: "post", body: JSON.stringify(creds) }
+//     )
+//     const data = await res.json()
+
+//     if (!res.ok) {
+//         throw {
+//             message: data.message,
+//             statusText: res.statusText,
+//             status: res.status
+//         }
+//     }
+
+//     return data
+// }
