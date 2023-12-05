@@ -1,6 +1,6 @@
 //##########################################################################
 
-import { BrowserRouter, Routes, useSearchParams } from "react-router-dom";
+import { BrowserRouter, createBrowserRouter, createRoutesFromElements, Routes, useSearchParams } from "react-router-dom";
 import VanDetail from "./pages/Vans/VanDetail";
 
 // 1. Import/set up Browser Router, Routes, and Route. 
@@ -216,8 +216,36 @@ import VanDetail from "./pages/Vans/VanDetail";
 
 //##########################################################################
 
-// 29.
+// 29. Implement Form from React Router 
 
+//--------------------Login.jsx------------------------------------
+import { Form } from "react-router-dom"
+
+export async function action(){ 
+    console.log("Action function")
+    return null
+}
+
+export default function Login() { 
+    return ( 
+        <Form method ="post"> 
+            <input />
+        </Form>
+    )
+}
+
+//--------------------index.jsx------------------------------------
+
+import Login, { loader as loginLoader, action as loginAction} from "./pages/Login"
+
+const router = createBrowserRouter(createRoutesFromElements( 
+    <Route  
+        path="login"
+        element={<Login />}
+        loader={loginLoader}
+        action={loginAction}
+    />
+))
 //##########################################################################
 
 // 30. 
